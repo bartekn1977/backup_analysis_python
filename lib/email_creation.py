@@ -48,14 +48,47 @@ class EmailCreation(object):
 
 
     def _initialize_smtp_server(self):
-        """Initialize SMTP server
+        """Initialize SMTP server with TLS and authentication support
         """
-        if Utils.config['email_server'] == "localhost":
-            self._smtpserver = smtplib.SMTP(Utils.config['email_server'])
+        email_server = Utils.config['email_server']
+        email_port = Utils.config.get('email_port', '')
+        email_user = Utils.config.get('email_user', '')
+        email_pass = Utils.config.get('email_pass', '')
+        
+        # Use default port 587 for TLS if not specified and not localhost
+        if not email_port or email_port == '':
+            if email_server == "localhost":
+                email_port = 25
+            else:
+                email_port = 587
         else:
-            self._smtpserver = smtplib.SMTP(Utils.config['email_server'], Utils.config['email_port'])
-        self._smtpserver.ehlo()
-        logger.info("Setup SMTP server connection")
+            email_port = int(email_port)
+        
+        try:
+            # Initialize SMTP connection
+            self._smtpserver = smtplib.SMTP(email_server, email_port)
+            self._smtpserver.ehlo()
+            
+            # Use STARTTLS for non-localhost connections
+            if email_server != "localhost":
+                if self._smtpserver.has_extn('STARTTLS'):
+                    self._smtpserver.starttls()
+                    self._smtpserver.ehlo()
+                    logger.info("TLS enabled for SMTP connection")
+                
+                # Authenticate if credentials are provided
+                if email_user and email_pass:
+                    self._smtpserver.login(email_user, email_pass)
+                    logger.info("SMTP authentication successful")
+            
+            logger.info(f"SMTP server connection established to {email_server}:{email_port}")
+            
+        except smtplib.SMTPException as e:
+            logger.error(f"SMTP connection failed: {str(e)}")
+            raise
+        except Exception as e:
+            logger.error(f"Failed to initialize SMTP server: {str(e)}")
+            raise
 
     def create_email(self, html, text):
         """Create email
