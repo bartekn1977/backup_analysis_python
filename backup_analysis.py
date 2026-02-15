@@ -39,6 +39,7 @@ import sys
 import ctypes
 
 import datetime
+from tempfile import template
 import threading
 import logging
 import logging.handlers
@@ -487,13 +488,16 @@ def add_disk_usage_section(config, oracle_dbs):
     """Add disk usage section to the report"""
     template = env.get_template('disk_usage.html.j2')
     
-    if config["oradata"][0] == "asm":
-        dsk_usage = asm_df(oracle_dbs[0])
-    else:
-        dsk_usage = fs_df(Utils.config_host["fs_check"])
+    for storage_type in config.get("oradata", []):
+        if storage_type.split(":")[1] == "asm":
+            db_to_check = storage_type.split(":")[0]
+            logging.info("Checking ASM disk usage for %s" % db_to_check)
+            dsk_usage = asm_df(oracle_dbs[Utils.get_db_index_by_name(oracle_dbs, db_to_check)])
+        else:
+            dsk_usage = fs_df(Utils.config_host["fs_check"])
     
-    html = template.render(inner_table=dsk_usage["html"], disk_type=config["oradata"][0])
-    txt = "\n=== Database disk usage ====\n\n%s" % dsk_usage["txt"]
+        html += template.render(inner_table=dsk_usage["html"], disk_type=storage_type)
+        txt += "\n=== Database disk usage ====\n\n%s" % dsk_usage["txt"]
     
     return html, txt
 
