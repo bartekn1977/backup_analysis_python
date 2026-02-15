@@ -30,8 +30,8 @@ class DatabaseUsage(object):
         except cx_Oracle.DatabaseError as exc:
             error, = exc.args
             logger.warning("Oracle-Error-Code: " + str(error.code))
-            logger.warning("Oracle-Error-Message: " + str(error.message))
-            print("Oracle error: " + str(error.message))
+            logger.warning("Oracle-Error-Message: " + str(error))
+            print("Oracle error: " + str(error))
             sys.exit(error.code)
 
     def close_db(self):
@@ -56,5 +56,5 @@ class DatabaseUsage(object):
         except cx_Oracle.DatabaseError as exc:
             error, = exc.args
             logger.warning("Oracle-Error-Code: " + str(error.code))
-            logger.warning("Oracle-Error-Message: " + str(error.message))
+            logger.warning("Oracle-Error-Message: " + str(error))
 

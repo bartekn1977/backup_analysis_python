@@ -36,14 +36,12 @@ __ver__ = "3.19.0"
 
 import os
 import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
 import ctypes
 
 import datetime
 import threading
 import logging
-import ConfigParser
+import configparser
 
 import texttable
 from jinja2 import Environment, FileSystemLoader
@@ -287,7 +285,7 @@ def db_test(dbs, results, i, check_logs = False, app_version = False, lob_check 
 def main():
     try:
         Utils.parse_params()
-        Utils.parse_config_file(ConfigParser)
+        Utils.parse_config_file(configparser)
 
         if Utils.params["verbose"]:
             logging.getLogger().setLevel(logging.DEBUG)
@@ -392,8 +390,8 @@ def main():
         # End TXT
         txt_content += "\n(C) %s (%s), Backup report version %s\n" % (Utils.config['company'], DATE.strftime("%Y"),__ver__)
 
-        html_content = html_content.decode().encode('utf-8').replace("%WARNING_MSG%", ALERT_MSG)
-        txt_content = txt_content.decode().encode('utf-8').replace("%WARNING_MSG%", ALERT_MSG)
+        html_content = html_content.replace("%WARNING_MSG%", ALERT_MSG)
+        txt_content = txt_content.replace("%WARNING_MSG%", ALERT_MSG)
 
         if Utils.params["verbose"]:
             # print(html_content)

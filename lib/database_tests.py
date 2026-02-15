@@ -3,8 +3,8 @@ import re
 from jinja2 import Environment, FileSystemLoader
 import os
 import sys
-from database_usage import DatabaseUsage
-from utils import Utils
+from .database_usage import DatabaseUsage
+from .utils import Utils
 import logging
 import datetime
 

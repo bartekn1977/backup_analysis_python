@@ -7,7 +7,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import os
 import sys
-from utils import Utils
+from .utils import Utils
 import logging
 import datetime
 
@@ -78,7 +78,7 @@ class EmailCreation(object):
 
         if self.alert:
             msg_root['Subject'] = "%s %s %s Warning!" % ("[BACKUP REPORT] ", Utils.config['email_title'], DATE.strftime("%Y-%m-%d"))
-            if not msg_root.has_key('X-Priority'):
+            if 'X-Priority' not in msg_root:
                 msg_root['X-Priority'] = "1 (Highest)"
         else:
             msg_root['Subject'] = "%s %s %s" % ("[BACKUP REPORT] ", Utils.config['email_title'], DATE.strftime("%Y-%m-%d"))

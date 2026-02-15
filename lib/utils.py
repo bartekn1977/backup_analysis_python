@@ -65,7 +65,7 @@ Version """ + __ver__ + """
         for row in tbl_data:
             html += "<tr>\n"
             for col, val in enumerate(row):
-                if isinstance(val, (int, long, float)):
+                if isinstance(val, (int, float)):
                     if index_to_test is not None\
                             and index_to_test == col and float(val) < float(Utils.config["threshold"]):
                         html += "<td style=\"color:#cf0000;font-weight:bold;text-align:right;\">{0:.2f}</td>\n".format(val)
@@ -129,10 +129,7 @@ Version """ + __ver__ + """
         """
         _, total, free = ctypes.c_ulonglong(), ctypes.c_ulonglong(), \
             ctypes.c_ulonglong()
-        if sys.version_info >= (3,) or isinstance(path, unicode):
-            fun = ctypes.windll.kernel32.GetDiskFreeSpaceExW
-        else:
-            fun = ctypes.windll.kernel32.GetDiskFreeSpaceExA
+        fun = ctypes.windll.kernel32.GetDiskFreeSpaceExW
         ret = fun(path, ctypes.byref(_), ctypes.byref(
             total), ctypes.byref(free))
         if ret == 0:
@@ -238,11 +235,11 @@ Version """ + __ver__ + """
             logger.info(Utils.config)
             logger.info(Utils.config_host)
             return Utils.config
-        except ConfigParser.Error, e:
+        except configparser.Error as e:
             logger.warning("Config parse error: %s" % e)
             print("Config parse error %s" % e)
             sys.exit(1)
-        except Exception, e:
+        except Exception as e:
             logger.warning(str(e))
             print("Config error %s" % e)
             sys.exit(1)
