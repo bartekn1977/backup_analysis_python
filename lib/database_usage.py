@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-import cx_Oracle
+import oracledb
 import logging
 import datetime
 import os
@@ -21,18 +20,18 @@ class DatabaseUsage(object):
         try:
             logger.info("Connecting to database: " + db["db"].upper())
             if db["url"] is not None:
+                mode = oracledb.SYSDBA if db["sysdba"] else None
                 if os.getenv("TNS_ADMIN") is not None:
-                    self.connection = cx_Oracle.connect(dsn=db["db"], encoding="UTF-8", nencoding="UTF-8", mode=(cx_Oracle.SYSDBA if db["sysdba"] else cx_Oracle.DEFAULT_AUTH))
+                    self.connection = oracledb.connect(dsn=db["db"], mode=mode)
                 else:
-                    self.connection = cx_Oracle.connect(db["url"], encoding="UTF-8", nencoding="UTF-8", mode=(cx_Oracle.SYSDBA if db["sysdba"] else cx_Oracle.DEFAULT_AUTH))
+                    self.connection = oracledb.connect(db["url"], mode=mode)
             else:
-                raise Exception("No URL")
-        except cx_Oracle.DatabaseError as exc:
-            error, = exc.args
-            logger.warning("Oracle-Error-Code: " + str(error.code))
-            logger.warning("Oracle-Error-Message: " + str(error))
-            print("Oracle error: " + str(error))
-            sys.exit(error.code)
+                raise ValueError("No URL")
+        except oracledb.DatabaseError as exc:
+            logger.warning("Oracle-Error-Code: " + str(exc.args[0].code))
+            logger.warning("Oracle-Error-Message: " + str(exc.args[0]))
+            print("Oracle error: " + str(exc.args[0]))
+            sys.exit(exc.args[0].code)
 
     def close_db(self):
         """Close database connection
@@ -46,15 +45,13 @@ class DatabaseUsage(object):
         try:
             cur = self.connection.cursor()
             if params is not None:
-                cur.prepare(sql)
-                cur.execute(None, params)
+                cur.execute(sql, params)
             else:
                 cur.execute(sql)
             res = cur.fetchall()
             cur.close()
             return res
-        except cx_Oracle.DatabaseError as exc:
-            error, = exc.args
-            logger.warning("Oracle-Error-Code: " + str(error.code))
-            logger.warning("Oracle-Error-Message: " + str(error))
+        except oracledb.DatabaseError as exc:
+            logger.warning("Oracle-Error-Code: " + str(exc.args[0].code))
+            logger.warning("Oracle-Error-Message: " + str(exc.args[0]))
 

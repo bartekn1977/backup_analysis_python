@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import re
 from jinja2 import Environment, FileSystemLoader
 import os
@@ -14,7 +13,8 @@ logger = logging.getLogger(__name__)
 class DatabaseTests(object):
 
     db_connection = None  # type: DatabaseUsage
-    env = None  # type: Jinja2 template enviroment
+    env = None
+    ALERT_PREFIX = "<p>&raquo; "
 
     def __init__(self, db):
         self.env = Environment(loader=FileSystemLoader('%s/sql/' % os.path.dirname(__file__)))
@@ -36,7 +36,7 @@ class DatabaseTests(object):
             ret_val['alert_msg'] = ""
         else:
             ret_val['alert'] = True
-            ret_val['alert_msg'] = "<p>&raquo; " + db_name + " ARCH Backup missing</p>"
+            ret_val['alert_msg'] = self.ALERT_PREFIX + db_name + " ARCH Backup missing</p>"
             logger.warning(db_name + " ARCH Backup missing")
             ret_val["html"] = "<h4 style='color:red'>UWAGA! Brak kopii w ramach ostatnich {0:} dni</h4>"\
                 .format(str(Utils.config["period"]))
@@ -63,7 +63,7 @@ class DatabaseTests(object):
             ret_val['alert_msg'] = ""
         else:
             ret_val['alert'] = True
-            ret_val['alert_msg'] = "<p>&raquo; " + db_name + " FULL Backup missing</p>"
+            ret_val['alert_msg'] = self.ALERT_PREFIX + db_name + " FULL Backup missing</p>"
             logger.warning(db_name + " FULL Backup missing")
             ret_val["html"] = "<h4 style='color:red'>UWAGA! Brak kopii w ramach ostatnich {0:} dni</h4>" \
                 .format(str(Utils.config["period"]))
@@ -283,7 +283,7 @@ class DatabaseTests(object):
         ret_val['alert_msg'] = ""
         if result[0][5] <= float(Utils.config["period"])*5:
             ret_val['alert'] = True
-            ret_val['alert_msg'] = "<p>&raquo; " + db_name + " Należy utworzyć nowe pliki parycji</p>"
+            ret_val['alert_msg'] = self.ALERT_PREFIX + db_name + " Należy utworzyć nowe pliki parycji</p>"
             logger.warning(db_name + " add new partition")
             ret_val["html"] = "<h4 style='color:red'>UWAGA! Należy utworzyć nowe pliki parycji, pozostało {0:} dni</h4>" \
                 .format(str(round(float(Utils.config["period"])*5)))

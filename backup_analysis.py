@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# coding=utf-8
+#!/usr/bin/env python3
 """
 Backup and Tablespace Analysis
 for ORACLE databases
@@ -11,9 +9,9 @@ author: Bart!
 
 Requirements:
     yum install python-pip python-devel python-markupsafe cyrus-sasl-plain -y
-    pip install --trusted-host pypi.org --trusted-host pypi.python.org cx_Oracle==7.3
-    pip install --trusted-host pypi.org --trusted-host pypi.python.org texttable==1.6.4
-    pip install --trusted-host pypi.org --trusted-host pypi.python.org Jinja2==2.8
+    pip install oracledb
+    pip install texttable
+    pip install Jinja2
 
 Script usage:
     backup_analysis.py -q
@@ -29,10 +27,12 @@ Changelog
     3.16.2 - update email header setup when warning need to be added
     3.16.4 - logger fixups, amms_infra.certs
     3.17.0 - formatting updates
+    3.20.0 - refactor to be used with python3
+    3.21.0 - use oracledb instead of cx_Oracle, add dataguard status, add docker version check
 
 """
 
-__ver__ = "3.19.0"
+__ver__ = "3.21.0"
 
 import os
 import sys
