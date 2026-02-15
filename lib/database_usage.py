@@ -19,19 +19,24 @@ class DatabaseUsage(object):
         """
         try:
             logger.info("Connecting to database: " + db["db"].upper())
-            if db["url"] is not None:
-                mode = oracledb.SYSDBA if db["sysdba"] else None
-                if os.getenv("TNS_ADMIN") is not None:
-                    self.connection = oracledb.connect(dsn=db["db"], mode=mode)
-                else:
-                    self.connection = oracledb.connect(db["url"], mode=mode)
+            mode = oracledb.SYSDBA if db["sysdba"] else None
+            
+            # Check if TNS_ADMIN is set (indicates wallet usage)
+            if os.getenv("TNS_ADMIN") is not None:
+                logger.info("Using Oracle Wallet from TNS_ADMIN: " + os.getenv("TNS_ADMIN"))
+                # For wallet-based authentication, use DSN without credentials
+                self.connection = oracledb.connect(dsn=db["db"], mode=mode)
+            elif db["url"] is not None:
+                # Traditional connection with username/password
+                self.connection = oracledb.connect(db["url"], mode=mode)
             else:
-                raise ValueError("No URL")
+                raise ValueError("No connection method available: no URL and no TNS_ADMIN")
         except oracledb.DatabaseError as exc:
-            logger.warning("Oracle-Error-Code: " + str(exc.args[0].code))
-            logger.warning("Oracle-Error-Message: " + str(exc.args[0]))
-            print("Oracle error: " + str(exc.args[0]))
-            sys.exit(exc.args[0].code)
+            error_obj = exc.args[0]
+            logger.warning("Oracle-Error-Code: " + str(error_obj.code))
+            logger.warning("Oracle-Error-Message: " + str(error_obj))
+            print("Oracle error: " + str(error_obj))
+            sys.exit(error_obj.code)
 
     def close_db(self):
         """Close database connection
