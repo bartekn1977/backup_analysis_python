@@ -119,7 +119,7 @@ def asm_df(dbs):
     con = DatabaseUsage(dbs)
     sql = """\
 SELECT
-    (SELECT SYS_CONTEXT('USERENV','HOST') FROM DUAL) host,
+    (SELECT SYS_CONTEXT('USERENV','SERVER_HOST') FROM DUAL) host,
     name,
     round(total_mb/1024) total_gb,
     round((total_mb-free_mb)/1024) as used_gb,
