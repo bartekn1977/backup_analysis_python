@@ -47,41 +47,59 @@ class EmailCreation(object):
             sys.exit(1)
 
 
+    def _get_smtp_port(self, email_server, email_port):
+        """Determine SMTP port to use"""
+        if not email_port or email_port == '':
+            return 25 if email_server == "localhost" else 587
+        return int(email_port)
+
+    def _connect_smtp_ssl(self, email_server, email_port):
+        """Connect using SSL/TLS (port 465)"""
+        server = smtplib.SMTP_SSL(email_server, email_port)
+        server.ehlo()
+        logger.info(f"SSL/TLS connection established to {email_server}:{email_port}")
+        return server
+
+    def _connect_smtp_starttls(self, email_server, email_port):
+        """Connect using STARTTLS (port 587 or others)"""
+        server = smtplib.SMTP(email_server, email_port)
+        server.ehlo()
+        
+        if email_server != "localhost" and server.has_extn('STARTTLS'):
+            server.starttls()
+            server.ehlo()
+            logger.info(f"STARTTLS enabled for SMTP connection to {email_server}:{email_port}")
+        
+        return server
+
+    def _authenticate_smtp(self, email_server, email_user, email_pass):
+        """Authenticate with SMTP server if credentials provided"""
+        if email_server != "localhost" and email_user and email_pass:
+            self._smtpserver.login(email_user, email_pass)
+            logger.info("SMTP authentication successful")
+
     def _initialize_smtp_server(self):
-        """Initialize SMTP server with TLS and authentication support
+        """Initialize SMTP server with SSL/TLS and authentication support
+        Supports both port 465 (SSL/TLS) and port 587 (STARTTLS)
         """
         email_server = Utils.config['email_server']
         email_port = Utils.config.get('email_port', '')
         email_user = Utils.config.get('email_user', '')
         email_pass = Utils.config.get('email_pass', '')
         
-        # Use default port 587 for TLS if not specified and not localhost
-        if not email_port or email_port == '':
-            if email_server == "localhost":
-                email_port = 25
-            else:
-                email_port = 587
-        else:
-            email_port = int(email_port)
+        email_port = self._get_smtp_port(email_server, email_port)
         
         try:
-            # Initialize SMTP connection
-            self._smtpserver = smtplib.SMTP(email_server, email_port)
-            self._smtpserver.ehlo()
+            # Port 465 uses SSL/TLS, others use STARTTLS
+            if email_port == 465:
+                self._smtpserver = self._connect_smtp_ssl(email_server, email_port)
+            else:
+                self._smtpserver = self._connect_smtp_starttls(email_server, email_port)
             
-            # Use STARTTLS for non-localhost connections
-            if email_server != "localhost":
-                if self._smtpserver.has_extn('STARTTLS'):
-                    self._smtpserver.starttls()
-                    self._smtpserver.ehlo()
-                    logger.info("TLS enabled for SMTP connection")
-                
-                # Authenticate if credentials are provided
-                if email_user and email_pass:
-                    self._smtpserver.login(email_user, email_pass)
-                    logger.info("SMTP authentication successful")
+            # Authenticate if needed
+            self._authenticate_smtp(email_server, email_user, email_pass)
             
-            logger.info(f"SMTP server connection established to {email_server}:{email_port}")
+            logger.info(f"SMTP server connection ready: {email_server}:{email_port}")
             
         except smtplib.SMTPException as e:
             logger.error(f"SMTP connection failed: {str(e)}")
