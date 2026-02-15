@@ -1,0 +1,42 @@
+<!-- Box {{ dbname }} -->
+<table width="100%" cellspacing="4" cellpadding="0" style="border: 1px solid #a8a8a8; -webkit-border-radius: 6px">
+    <tr>
+        <td align="center" colspan="2">
+            Baza danych:
+            <h2 style="color: #444"><img src="cid:0" align="bottom" style="border:0px; margin-top:2px;" alt="-">&nbsp; {{ dbname|upper }} {% if version %}<span style="font-size:12px; color:#748080;">({{ version }})</span>{% endif %}</h2>
+            <span style="font-size:12px; color:#748080;">DBID: {{ dbid }}</span>
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" align="center">
+            Wielkość [GB]: <h3>{{ size }}</h3>
+        </td>
+        <td width="50%" align="center">Status kopii:
+            {% if alert %}
+            <h3 style="background-color: #880000;color: #fff;">BŁĄD</h3>
+            {% else %}
+            <h3 style="background-color: #349651;color: #fff;">OK</h3>
+            {% endif %}
+        </td>
+    </tr>
+    {% if dg_status %}
+    <tr>
+        <td></td>
+        <td align="center">Status DataGuard:
+            {% if dg_status == "SUCCESS" %}
+            <h3 style="background-color: #349651;color: #fff;">OK</h3>
+            {% elif dg_status == "ERROR" %}
+            <h3 style="background-color: #880000;color: #fff;">BŁĄD</h3>
+            {% else %}
+            <h3 style="background-color: #fcba03;color: #fff;">DO SPRAWDZENIA</h3>
+            {% endif %}
+        </td>
+    </tr>
+    {% endif %}
+    <tr>
+        <td align="center" colspan="2" style="border-top: 1px solid #a8a8a8;">
+            <p style="margin:6px;"><a href="#{{ dbname|upper }}">Szczegółowe raporty &raquo;</a></p>
+        </td>
+    </tr>
+</table>
+<!-- Box {{ dbname }} -->

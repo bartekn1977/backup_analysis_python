@@ -1,0 +1,1 @@
+select pdb_name, RawToHex(guid) from cdb_pdbs where pdb_id > 2 order by 1

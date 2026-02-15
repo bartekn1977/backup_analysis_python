@@ -1,0 +1,1707 @@
+[2026-01-07 18:56:45,666, root, MainThread, INFO] Report start: 07-01-2026
+[2026-01-07 18:56:45,666, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': True}
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] oracle_dbs = sys/system@rch, sys/system@edm, sys/system@lab, sys/Proste123@mpi
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] period = 3
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] email_port = 
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-07 18:56:45,667, lib.utils, MainThread, INFO] email_from = Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] email_cc = pws@ganso.pl
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'sys/system@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'sys/system@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'sys/system@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'sys/Proste123@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>'}
+[2026-01-07 18:56:45,668, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-07 18:56:45,672, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-07 18:56:45,680, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-07 18:56:45,681, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-07 18:56:45,681, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-07 18:56:46,698, lib.database_usage, Thread-3, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:56:46,698, lib.database_usage, Thread-3, WARNING] Oracle-Error-Message: ORA-01017: niepoprawna nazwa użytkownika/hasło; odmowa zalogowania
+[2026-01-07 18:56:46,698, lib.database_usage, Thread-1, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:56:46,698, lib.database_usage, Thread-1, WARNING] Oracle-Error-Message: ORA-01017: niepoprawna nazwa użytkownika/hasło; odmowa zalogowania
+[2026-01-07 18:56:46,698, lib.database_usage, Thread-2, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:56:46,699, lib.database_usage, Thread-2, WARNING] Oracle-Error-Message: ORA-01017: niepoprawna nazwa użytkownika/hasło; odmowa zalogowania
+[2026-01-07 18:56:46,730, lib.database_usage, Thread-4, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:56:46,730, lib.database_usage, Thread-4, WARNING] Oracle-Error-Message: ORA-01017: invalid username/password; logon denied
+[2026-01-07 18:56:46,735, root, MainThread, WARNING] 'NoneType' object has no attribute '__getitem__'
+[2026-01-07 18:58:04,755, root, MainThread, INFO] Report start: 07-01-2026
+[2026-01-07 18:58:04,755, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': True}
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] oracle_dbs = sys/sys@rch, sys/sys@edm, sys/sys@lab, sys/Proste123@mpi
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] period = 3
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_port = 
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_from = Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] email_cc = pws@ganso.pl
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-07 18:58:04,756, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'sys/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'sys/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'sys/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'sys/Proste123@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>'}
+[2026-01-07 18:58:04,757, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-07 18:58:04,760, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-07 18:58:04,767, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-07 18:58:04,768, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-07 18:58:04,769, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-07 18:58:05,783, lib.database_usage, Thread-1, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:58:05,783, lib.database_usage, Thread-1, WARNING] Oracle-Error-Message: ORA-01017: niepoprawna nazwa użytkownika/hasło; odmowa zalogowania
+[2026-01-07 18:58:05,787, lib.database_usage, Thread-2, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:58:05,787, lib.database_usage, Thread-3, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:58:05,787, lib.database_usage, Thread-2, WARNING] Oracle-Error-Message: ORA-01017: niepoprawna nazwa użytkownika/hasło; odmowa zalogowania
+[2026-01-07 18:58:05,788, lib.database_usage, Thread-3, WARNING] Oracle-Error-Message: ORA-01017: niepoprawna nazwa użytkownika/hasło; odmowa zalogowania
+[2026-01-07 18:58:05,788, lib.database_usage, Thread-4, WARNING] Oracle-Error-Code: 1017
+[2026-01-07 18:58:05,788, lib.database_usage, Thread-4, WARNING] Oracle-Error-Message: ORA-01017: invalid username/password; logon denied
+[2026-01-07 18:58:05,793, root, MainThread, WARNING] 'NoneType' object has no attribute '__getitem__'
+[2026-01-07 19:04:48,651, root, MainThread, INFO] Report start: 07-01-2026
+[2026-01-07 19:04:48,651, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': True}
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] period = 3
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_port = 
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_from = Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] email_cc = pws@ganso.pl
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-07 19:04:48,652, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-07 19:04:48,653, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>'}
+[2026-01-07 19:04:48,653, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-07 19:04:48,656, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-07 19:04:48,667, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-07 19:04:48,667, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-07 19:04:48,668, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-07 19:04:48,698, root, Thread-3, INFO] Executiong on LAB
+[2026-01-07 19:04:48,699, lib.database_tests, Thread-3, DEBUG] Database version test
+[2026-01-07 19:04:48,699, root, Thread-2, INFO] Executiong on EDM
+[2026-01-07 19:04:48,699, lib.database_tests, Thread-2, DEBUG] Database version test
+[2026-01-07 19:04:48,700, root, Thread-4, INFO] Executiong on MPI
+[2026-01-07 19:04:48,700, lib.database_tests, Thread-4, DEBUG] Database version test
+[2026-01-07 19:04:48,704, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:04:48,704, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-07 19:04:48,704, lib.database_tests, Thread-4, DEBUG] Docker APP version test
+[2026-01-07 19:04:48,705, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:04:48,705, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-07 19:04:48,705, lib.database_tests, Thread-3, DEBUG] InfoMedica version test
+[2026-01-07 19:04:48,706, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:04:48,706, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-07 19:04:48,706, lib.database_tests, Thread-2, DEBUG] Docker APP version test
+[2026-01-07 19:04:48,708, lib.database_tests, Thread-3, DEBUG] DBID test
+[2026-01-07 19:04:48,709, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-07 19:04:48,717, lib.database_tests, Thread-4, DEBUG] DBID test
+[2026-01-07 19:04:48,718, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-07 19:04:48,726, lib.database_tests, Thread-3, DEBUG] DB size
+[2026-01-07 19:04:48,726, lib.database_tests, Thread-2, DEBUG] DBID test
+[2026-01-07 19:04:48,727, root, Thread-1, INFO] Executiong on RCH
+[2026-01-07 19:04:48,728, lib.database_tests, Thread-1, DEBUG] Database version test
+[2026-01-07 19:04:48,728, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-07 19:04:48,729, lib.database_tests, Thread-2, DEBUG] DB size
+[2026-01-07 19:04:48,730, lib.database_tests, Thread-4, DEBUG] DB size
+[2026-01-07 19:04:48,735, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:04:48,735, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-07 19:04:48,735, lib.database_tests, Thread-1, DEBUG] AMMS version test
+[2026-01-07 19:04:48,743, lib.database_tests, Thread-1, DEBUG] DBID test
+[2026-01-07 19:04:48,749, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-07 19:04:48,749, lib.database_tests, Thread-1, DEBUG] DB size
+[2026-01-07 19:04:48,920, root, Thread-2, INFO] Database size EDM 79.52
+[2026-01-07 19:04:48,920, lib.database_tests, Thread-2, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:04:48,921, root, Thread-3, INFO] Database size LAB 24.07
+[2026-01-07 19:04:48,921, lib.database_tests, Thread-3, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:04:48,929, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-07 19:04:48,929, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-07 19:04:48,933, lib.database_tests, Thread-3, DEBUG] FULL Backup test
+[2026-01-07 19:04:48,935, lib.database_tests, Thread-2, DEBUG] FULL Backup test
+[2026-01-07 19:04:48,952, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-07 19:04:48,953, lib.database_tests, Thread-4, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:04:48,958, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-07 19:04:48,958, lib.database_tests, Thread-4, DEBUG] FULL Backup test
+[2026-01-07 19:04:48,969, root, Thread-2, INFO] Full backup edm
+[2026-01-07 19:04:48,970, lib.database_tests, Thread-2, DEBUG] Archivelog Backup test
+[2026-01-07 19:04:48,970, root, Thread-3, INFO] Full backup lab
+[2026-01-07 19:04:48,971, lib.database_tests, Thread-3, DEBUG] Archivelog Backup test
+[2026-01-07 19:04:48,980, lib.database_tests, Thread-2, WARNING] EDM ARCH Backup missing
+[2026-01-07 19:04:48,980, root, Thread-2, INFO] Archivelog edm
+[2026-01-07 19:04:48,980, lib.database_tests, Thread-3, WARNING] LAB ARCH Backup missing
+[2026-01-07 19:04:48,981, root, Thread-3, INFO] Archivelog lab
+[2026-01-07 19:04:48,981, lib.database_tests, Thread-2, DEBUG] Redo Logs test
+[2026-01-07 19:04:48,981, lib.database_tests, Thread-3, DEBUG] Redo Logs test
+[2026-01-07 19:04:48,985, root, Thread-4, INFO] Full backup mpi
+[2026-01-07 19:04:48,985, lib.database_tests, Thread-4, DEBUG] Archivelog Backup test
+[2026-01-07 19:04:48,987, root, Thread-3, INFO] Redo logs lab
+[2026-01-07 19:04:48,988, root, Thread-2, INFO] Redo logs edm
+[2026-01-07 19:04:48,988, lib.database_tests, Thread-3, DEBUG] Tablespace size test
+[2026-01-07 19:04:48,988, lib.database_tests, Thread-2, DEBUG] Tablespace size test
+[2026-01-07 19:04:48,994, lib.database_tests, Thread-4, WARNING] MPI ARCH Backup missing
+[2026-01-07 19:04:48,994, root, Thread-4, INFO] Archivelog mpi
+[2026-01-07 19:04:48,994, lib.database_tests, Thread-4, DEBUG] Redo Logs test
+[2026-01-07 19:04:48,998, root, Thread-4, INFO] Redo logs mpi
+[2026-01-07 19:04:48,998, lib.database_tests, Thread-4, DEBUG] Tablespace size test
+[2026-01-07 19:04:49,311, root, Thread-1, INFO] Database size RCH 1202.55
+[2026-01-07 19:04:49,311, lib.database_tests, Thread-1, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:04:49,320, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-07 19:04:49,321, lib.database_tests, Thread-1, DEBUG] FULL Backup test
+[2026-01-07 19:04:49,360, root, Thread-1, INFO] Full backup rch
+[2026-01-07 19:04:49,360, lib.database_tests, Thread-1, DEBUG] Archivelog Backup test
+[2026-01-07 19:04:49,371, lib.database_tests, Thread-1, WARNING] RCH ARCH Backup missing
+[2026-01-07 19:04:49,371, root, Thread-1, INFO] Archivelog rch
+[2026-01-07 19:04:49,371, lib.database_tests, Thread-1, DEBUG] LOG_ZAPISY test
+[2026-01-07 19:04:49,461, root, Thread-2, INFO] Tablespaces edm
+[2026-01-07 19:04:49,461, lib.database_tests, Thread-2, DEBUG] TABLE statistics test
+[2026-01-07 19:04:49,486, root, Thread-3, INFO] Tablespaces lab
+[2026-01-07 19:04:49,487, lib.database_tests, Thread-3, DEBUG] TABLE statistics test
+[2026-01-07 19:04:49,512, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-07 19:04:49,518, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-07 19:04:51,174, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-07 19:04:51,175, lib.database_tests, Thread-4, DEBUG] TABLE statistics test
+[2026-01-07 19:04:51,216, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-07 19:05:08,140, root, Thread-1, INFO] Logs info rch
+[2026-01-07 19:05:08,140, lib.database_tests, Thread-1, DEBUG] AMMS_INFRA.CERTS test
+[2026-01-07 19:05:08,144, root, Thread-1, INFO] AMMS cert rch
+[2026-01-07 19:05:08,145, lib.database_tests, Thread-1, DEBUG] Redo Logs test
+[2026-01-07 19:05:08,163, root, Thread-1, INFO] Redo logs rch
+[2026-01-07 19:05:08,163, lib.database_tests, Thread-1, DEBUG] Tablespace size test
+[2026-01-07 19:05:08,426, root, Thread-1, INFO] Tablespaces rch
+[2026-01-07 19:05:08,426, lib.database_tests, Thread-1, DEBUG] TABLE statistics test
+[2026-01-07 19:05:08,488, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-07 19:05:08,497, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-07 19:05:08,497, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-07 19:10:21,856, root, MainThread, INFO] Report start: 07-01-2026
+[2026-01-07 19:10:21,856, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': True}
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] period = 3
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_port = 
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_from = Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] email_cc = pws@ganso.pl
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-07 19:10:21,857, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-07 19:10:21,858, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-07 19:10:21,858, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>'}
+[2026-01-07 19:10:21,858, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-07 19:10:21,862, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-07 19:10:21,869, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-07 19:10:21,870, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-07 19:10:21,871, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-07 19:10:21,899, root, Thread-2, INFO] Executiong on EDM
+[2026-01-07 19:10:21,899, lib.database_tests, Thread-2, DEBUG] Database version test
+[2026-01-07 19:10:21,900, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:10:21,900, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-07 19:10:21,900, lib.database_tests, Thread-2, DEBUG] Docker APP version test
+[2026-01-07 19:10:21,904, root, Thread-4, INFO] Executiong on MPI
+[2026-01-07 19:10:21,904, lib.database_tests, Thread-4, DEBUG] Database version test
+[2026-01-07 19:10:21,905, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:10:21,905, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-07 19:10:21,905, lib.database_tests, Thread-4, DEBUG] Docker APP version test
+[2026-01-07 19:10:21,906, root, Thread-3, INFO] Executiong on LAB
+[2026-01-07 19:10:21,906, lib.database_tests, Thread-3, DEBUG] Database version test
+[2026-01-07 19:10:21,907, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:10:21,907, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-07 19:10:21,907, lib.database_tests, Thread-3, DEBUG] InfoMedica version test
+[2026-01-07 19:10:21,909, lib.database_tests, Thread-3, DEBUG] DBID test
+[2026-01-07 19:10:21,910, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-07 19:10:21,911, lib.database_tests, Thread-2, DEBUG] DBID test
+[2026-01-07 19:10:21,913, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-07 19:10:21,914, root, Thread-1, INFO] Executiong on RCH
+[2026-01-07 19:10:21,914, lib.database_tests, Thread-1, DEBUG] Database version test
+[2026-01-07 19:10:21,916, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-07 19:10:21,916, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-07 19:10:21,916, lib.database_tests, Thread-1, DEBUG] AMMS version test
+[2026-01-07 19:10:21,918, lib.database_tests, Thread-1, DEBUG] DBID test
+[2026-01-07 19:10:21,919, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-07 19:10:21,931, lib.database_tests, Thread-3, DEBUG] DB size
+[2026-01-07 19:10:21,933, lib.database_tests, Thread-4, DEBUG] DBID test
+[2026-01-07 19:10:21,935, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-07 19:10:21,935, lib.database_tests, Thread-4, DEBUG] DB size
+[2026-01-07 19:10:21,938, lib.database_tests, Thread-1, DEBUG] DB size
+[2026-01-07 19:10:21,938, lib.database_tests, Thread-2, DEBUG] DB size
+[2026-01-07 19:10:22,008, root, Thread-2, INFO] Database size EDM 79.52
+[2026-01-07 19:10:22,008, lib.database_tests, Thread-2, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:10:22,010, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-07 19:10:22,012, lib.database_tests, Thread-2, DEBUG] FULL Backup test
+[2026-01-07 19:10:22,017, root, Thread-2, INFO] Full backup edm
+[2026-01-07 19:10:22,017, lib.database_tests, Thread-2, DEBUG] Archivelog Backup test
+[2026-01-07 19:10:22,018, root, Thread-3, INFO] Database size LAB 24.07
+[2026-01-07 19:10:22,018, lib.database_tests, Thread-3, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:10:22,019, lib.database_tests, Thread-2, WARNING] EDM ARCH Backup missing
+[2026-01-07 19:10:22,019, root, Thread-2, INFO] Archivelog edm
+[2026-01-07 19:10:22,019, lib.database_tests, Thread-2, DEBUG] Redo Logs test
+[2026-01-07 19:10:22,020, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-07 19:10:22,020, lib.database_tests, Thread-3, DEBUG] FULL Backup test
+[2026-01-07 19:10:22,022, root, Thread-2, INFO] Redo logs edm
+[2026-01-07 19:10:22,022, lib.database_tests, Thread-2, DEBUG] Tablespace size test
+[2026-01-07 19:10:22,024, root, Thread-3, INFO] Full backup lab
+[2026-01-07 19:10:22,024, lib.database_tests, Thread-3, DEBUG] Archivelog Backup test
+[2026-01-07 19:10:22,025, lib.database_tests, Thread-3, WARNING] LAB ARCH Backup missing
+[2026-01-07 19:10:22,025, root, Thread-3, INFO] Archivelog lab
+[2026-01-07 19:10:22,025, lib.database_tests, Thread-3, DEBUG] Redo Logs test
+[2026-01-07 19:10:22,028, root, Thread-3, INFO] Redo logs lab
+[2026-01-07 19:10:22,028, lib.database_tests, Thread-3, DEBUG] Tablespace size test
+[2026-01-07 19:10:22,044, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-07 19:10:22,044, lib.database_tests, Thread-4, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:10:22,046, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-07 19:10:22,046, lib.database_tests, Thread-4, DEBUG] FULL Backup test
+[2026-01-07 19:10:22,049, root, Thread-4, INFO] Full backup mpi
+[2026-01-07 19:10:22,050, lib.database_tests, Thread-4, DEBUG] Archivelog Backup test
+[2026-01-07 19:10:22,051, lib.database_tests, Thread-4, WARNING] MPI ARCH Backup missing
+[2026-01-07 19:10:22,051, root, Thread-4, INFO] Archivelog mpi
+[2026-01-07 19:10:22,051, lib.database_tests, Thread-4, DEBUG] Redo Logs test
+[2026-01-07 19:10:22,053, root, Thread-4, INFO] Redo logs mpi
+[2026-01-07 19:10:22,053, lib.database_tests, Thread-4, DEBUG] Tablespace size test
+[2026-01-07 19:10:22,111, root, Thread-1, INFO] Database size RCH 1203.14
+[2026-01-07 19:10:22,112, lib.database_tests, Thread-1, DEBUG] Fast Recovery Area usage
+[2026-01-07 19:10:22,113, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-07 19:10:22,114, lib.database_tests, Thread-1, DEBUG] FULL Backup test
+[2026-01-07 19:10:22,117, root, Thread-1, INFO] Full backup rch
+[2026-01-07 19:10:22,117, lib.database_tests, Thread-1, DEBUG] Archivelog Backup test
+[2026-01-07 19:10:22,119, lib.database_tests, Thread-1, WARNING] RCH ARCH Backup missing
+[2026-01-07 19:10:22,119, root, Thread-1, INFO] Archivelog rch
+[2026-01-07 19:10:22,119, lib.database_tests, Thread-1, DEBUG] LOG_ZAPISY test
+[2026-01-07 19:10:22,479, root, Thread-2, INFO] Tablespaces edm
+[2026-01-07 19:10:22,480, lib.database_tests, Thread-2, DEBUG] TABLE statistics test
+[2026-01-07 19:10:22,521, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-07 19:10:22,530, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-07 19:10:22,531, lib.database_tests, Thread-4, DEBUG] TABLE statistics test
+[2026-01-07 19:10:22,560, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-07 19:10:22,581, root, Thread-3, INFO] Tablespaces lab
+[2026-01-07 19:10:22,581, lib.database_tests, Thread-3, DEBUG] TABLE statistics test
+[2026-01-07 19:10:22,596, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-07 19:10:34,076, root, Thread-1, INFO] Logs info rch
+[2026-01-07 19:10:34,077, lib.database_tests, Thread-1, DEBUG] AMMS_INFRA.CERTS test
+[2026-01-07 19:10:34,080, root, Thread-1, INFO] AMMS cert rch
+[2026-01-07 19:10:34,080, lib.database_tests, Thread-1, DEBUG] Redo Logs test
+[2026-01-07 19:10:34,099, root, Thread-1, INFO] Redo logs rch
+[2026-01-07 19:10:34,099, lib.database_tests, Thread-1, DEBUG] Tablespace size test
+[2026-01-07 19:10:34,413, root, Thread-1, INFO] Tablespaces rch
+[2026-01-07 19:10:34,413, lib.database_tests, Thread-1, DEBUG] TABLE statistics test
+[2026-01-07 19:10:34,453, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-07 19:10:34,462, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-07 19:10:34,462, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-12 13:15:56,029, root, MainThread, INFO] Report start: 12-01-2026
+[2026-01-12 13:15:56,029, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] period = 3
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_port = 
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_from = Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPZOZ <orcl-bck-bb@ganso.pl>'}
+[2026-01-12 13:15:56,030, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-12 13:15:56,034, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-12 13:15:56,042, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-12 13:15:56,042, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-12 13:15:56,043, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-12 13:15:56,070, root, Thread-4, INFO] Executiong on MPI
+[2026-01-12 13:15:56,072, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:15:56,072, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-12 13:15:56,073, root, Thread-3, INFO] Executiong on LAB
+[2026-01-12 13:15:56,075, root, Thread-2, INFO] Executiong on EDM
+[2026-01-12 13:15:56,081, root, Thread-1, INFO] Executiong on RCH
+[2026-01-12 13:15:56,083, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:15:56,083, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-12 13:15:56,084, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:15:56,084, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-12 13:15:56,084, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:15:56,084, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-12 13:15:56,085, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-12 13:15:56,087, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-12 13:15:56,094, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-12 13:15:56,115, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-12 13:15:56,190, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-12 13:15:56,193, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-12 13:15:56,212, root, Thread-4, INFO] Full backup mpi
+[2026-01-12 13:15:56,222, root, Thread-4, INFO] Archivelog mpi
+[2026-01-12 13:15:56,225, root, Thread-4, INFO] Redo logs mpi
+[2026-01-12 13:15:56,278, root, Thread-2, INFO] Database size EDM 79.56
+[2026-01-12 13:15:56,284, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-12 13:15:56,312, root, Thread-2, INFO] Full backup edm
+[2026-01-12 13:15:56,325, root, Thread-2, INFO] Archivelog edm
+[2026-01-12 13:15:56,330, root, Thread-2, INFO] Redo logs edm
+[2026-01-12 13:15:56,333, root, Thread-3, INFO] Database size LAB 24.13
+[2026-01-12 13:15:56,340, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-12 13:15:56,385, root, Thread-3, INFO] Full backup lab
+[2026-01-12 13:15:56,408, root, Thread-3, INFO] Archivelog lab
+[2026-01-12 13:15:56,414, root, Thread-3, INFO] Redo logs lab
+[2026-01-12 13:15:56,481, root, Thread-1, INFO] Database size RCH 1204.29
+[2026-01-12 13:15:56,483, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-12 13:15:56,488, root, Thread-1, INFO] Full backup rch
+[2026-01-12 13:15:56,494, root, Thread-1, INFO] Archivelog rch
+[2026-01-12 13:15:56,882, root, Thread-3, INFO] Tablespaces lab
+[2026-01-12 13:15:56,912, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-12 13:15:58,353, root, Thread-2, INFO] Tablespaces edm
+[2026-01-12 13:15:58,406, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-12 13:15:58,492, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-12 13:15:58,527, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-12 13:16:15,382, root, Thread-1, INFO] Logs info rch
+[2026-01-12 13:16:15,385, root, Thread-1, INFO] AMMS cert rch
+[2026-01-12 13:16:15,397, root, Thread-1, INFO] Redo logs rch
+[2026-01-12 13:16:15,641, root, Thread-1, INFO] Tablespaces rch
+[2026-01-12 13:16:15,684, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-12 13:16:15,693, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-12 13:16:15,694, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-12 13:16:15,716, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-12 13:16:15,719, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-12 13:18:04,071, root, MainThread, INFO] Report start: 12-01-2026
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] period = 3
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] email_port = 
+[2026-01-12 13:18:04,072, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-12 13:18:04,073, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-12 13:18:04,076, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-12 13:18:04,092, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-12 13:18:04,093, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-12 13:18:04,093, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-12 13:18:04,121, root, Thread-2, INFO] Executiong on EDM
+[2026-01-12 13:18:04,123, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:18:04,123, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-12 13:18:04,128, root, Thread-3, INFO] Executiong on LAB
+[2026-01-12 13:18:04,128, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:18:04,128, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-12 13:18:04,131, root, Thread-1, INFO] Executiong on RCH
+[2026-01-12 13:18:04,133, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:18:04,133, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-12 13:18:04,134, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-12 13:18:04,135, root, Thread-4, INFO] Executiong on MPI
+[2026-01-12 13:18:04,136, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-12 13:18:04,137, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-12 13:18:04,138, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-12 13:18:04,139, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-12 13:18:04,158, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-12 13:18:04,237, root, Thread-2, INFO] Database size EDM 79.56
+[2026-01-12 13:18:04,239, root, Thread-3, INFO] Database size LAB 24.13
+[2026-01-12 13:18:04,240, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-12 13:18:04,240, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-12 13:18:04,243, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-12 13:18:04,244, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-12 13:18:04,258, root, Thread-3, INFO] Full backup lab
+[2026-01-12 13:18:04,261, root, Thread-4, INFO] Full backup mpi
+[2026-01-12 13:18:04,265, root, Thread-2, INFO] Full backup edm
+[2026-01-12 13:18:04,273, root, Thread-3, INFO] Archivelog lab
+[2026-01-12 13:18:04,276, root, Thread-4, INFO] Archivelog mpi
+[2026-01-12 13:18:04,279, root, Thread-3, INFO] Redo logs lab
+[2026-01-12 13:18:04,282, root, Thread-4, INFO] Redo logs mpi
+[2026-01-12 13:18:04,283, root, Thread-2, INFO] Archivelog edm
+[2026-01-12 13:18:04,287, root, Thread-2, INFO] Redo logs edm
+[2026-01-12 13:18:04,339, root, Thread-1, INFO] Database size RCH 1204.29
+[2026-01-12 13:18:04,340, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-12 13:18:04,345, root, Thread-1, INFO] Full backup rch
+[2026-01-12 13:18:04,351, root, Thread-1, INFO] Archivelog rch
+[2026-01-12 13:18:04,770, root, Thread-2, INFO] Tablespaces edm
+[2026-01-12 13:18:04,787, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-12 13:18:04,790, root, Thread-3, INFO] Tablespaces lab
+[2026-01-12 13:18:04,813, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-12 13:18:04,818, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-12 13:18:04,827, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-12 13:18:15,397, root, Thread-1, INFO] Logs info rch
+[2026-01-12 13:18:15,399, root, Thread-1, INFO] AMMS cert rch
+[2026-01-12 13:18:15,410, root, Thread-1, INFO] Redo logs rch
+[2026-01-12 13:18:15,648, root, Thread-1, INFO] Tablespaces rch
+[2026-01-12 13:18:15,696, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-12 13:18:15,712, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-12 13:18:15,712, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-12 13:18:15,731, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-12 13:18:15,738, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-14 08:30:01,753, root, MainThread, INFO] Report start: 14-01-2026
+[2026-01-14 08:30:01,754, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-14 08:30:01,755, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-14 08:30:01,755, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-14 08:30:01,755, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-14 08:30:01,755, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] period = 3
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_port = 
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-14 08:30:01,756, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-14 08:30:01,757, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-14 08:30:01,762, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-14 08:30:01,771, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-14 08:30:01,772, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-14 08:30:01,772, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-14 08:30:01,809, root, Thread-2, INFO] Executiong on EDM
+[2026-01-14 08:30:01,811, root, Thread-3, INFO] Executiong on LAB
+[2026-01-14 08:30:01,812, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-14 08:30:01,812, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-14 08:30:01,813, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-14 08:30:01,813, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-14 08:30:01,814, root, Thread-1, INFO] Executiong on RCH
+[2026-01-14 08:30:01,815, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-14 08:30:01,815, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-14 08:30:01,816, root, Thread-4, INFO] Executiong on MPI
+[2026-01-14 08:30:01,818, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-14 08:30:01,818, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-14 08:30:01,818, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-14 08:30:01,823, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-14 08:30:01,835, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-14 08:30:01,846, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-14 08:30:01,953, root, Thread-2, INFO] Database size EDM 79.59
+[2026-01-14 08:30:01,955, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-14 08:30:01,962, root, Thread-2, INFO] Full backup edm
+[2026-01-14 08:30:01,965, root, Thread-3, INFO] Database size LAB 24.13
+[2026-01-14 08:30:01,967, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-14 08:30:01,970, root, Thread-2, INFO] Archivelog edm
+[2026-01-14 08:30:01,973, root, Thread-3, INFO] Full backup lab
+[2026-01-14 08:30:01,974, root, Thread-2, INFO] Redo logs edm
+[2026-01-14 08:30:01,980, root, Thread-3, INFO] Archivelog lab
+[2026-01-14 08:30:01,983, root, Thread-3, INFO] Redo logs lab
+[2026-01-14 08:30:02,148, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-14 08:30:02,151, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-14 08:30:02,168, root, Thread-4, INFO] Full backup mpi
+[2026-01-14 08:30:02,186, root, Thread-4, INFO] Archivelog mpi
+[2026-01-14 08:30:02,190, root, Thread-4, INFO] Redo logs mpi
+[2026-01-14 08:30:02,400, root, Thread-1, INFO] Database size RCH 1204.29
+[2026-01-14 08:30:02,402, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-14 08:30:02,408, root, Thread-1, INFO] Full backup rch
+[2026-01-14 08:30:02,415, root, Thread-1, INFO] Archivelog rch
+[2026-01-14 08:30:02,710, root, Thread-3, INFO] Tablespaces lab
+[2026-01-14 08:30:02,731, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-14 08:30:04,093, root, Thread-2, INFO] Tablespaces edm
+[2026-01-14 08:30:04,135, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-14 08:30:04,616, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-14 08:30:04,661, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-14 08:30:24,976, root, Thread-1, INFO] Logs info rch
+[2026-01-14 08:30:24,979, root, Thread-1, INFO] AMMS cert rch
+[2026-01-14 08:30:24,990, root, Thread-1, INFO] Redo logs rch
+[2026-01-14 08:30:25,284, root, Thread-1, INFO] Tablespaces rch
+[2026-01-14 08:30:25,332, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-14 08:30:25,343, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-14 08:30:25,344, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-14 08:30:25,367, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-14 08:30:25,370, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-17 08:30:01,269, root, MainThread, INFO] Report start: 17-01-2026
+[2026-01-17 08:30:01,270, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] period = 3
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_port = 
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-17 08:30:01,271, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-17 08:30:01,272, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-17 08:30:01,272, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-17 08:30:01,272, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-17 08:30:01,272, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-17 08:30:01,275, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-17 08:30:01,276, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-17 08:30:01,284, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-17 08:30:01,285, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-17 08:30:01,320, root, Thread-2, INFO] Executiong on EDM
+[2026-01-17 08:30:01,323, root, Thread-3, INFO] Executiong on LAB
+[2026-01-17 08:30:01,326, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-17 08:30:01,326, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-17 08:30:01,327, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-17 08:30:01,327, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-17 08:30:01,327, root, Thread-4, INFO] Executiong on MPI
+[2026-01-17 08:30:01,328, root, Thread-1, INFO] Executiong on RCH
+[2026-01-17 08:30:01,329, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-17 08:30:01,329, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-17 08:30:01,329, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-17 08:30:01,329, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-17 08:30:01,333, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-17 08:30:01,333, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-17 08:30:01,348, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-17 08:30:01,353, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-17 08:30:01,436, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-17 08:30:01,439, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-17 08:30:01,443, root, Thread-3, INFO] Database size LAB 24.18
+[2026-01-17 08:30:01,445, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-17 08:30:01,447, root, Thread-4, INFO] Full backup mpi
+[2026-01-17 08:30:01,452, root, Thread-3, INFO] Full backup lab
+[2026-01-17 08:30:01,455, root, Thread-4, INFO] Archivelog mpi
+[2026-01-17 08:30:01,460, root, Thread-4, INFO] Redo logs mpi
+[2026-01-17 08:30:01,460, root, Thread-3, INFO] Archivelog lab
+[2026-01-17 08:30:01,464, root, Thread-3, INFO] Redo logs lab
+[2026-01-17 08:30:01,539, root, Thread-2, INFO] Database size EDM 79.76
+[2026-01-17 08:30:01,545, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-17 08:30:01,547, root, Thread-1, INFO] Database size RCH 1204.29
+[2026-01-17 08:30:01,549, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-17 08:30:01,554, root, Thread-1, INFO] Full backup rch
+[2026-01-17 08:30:01,561, root, Thread-1, INFO] Archivelog rch
+[2026-01-17 08:30:01,577, root, Thread-2, INFO] Full backup edm
+[2026-01-17 08:30:01,592, root, Thread-2, INFO] Archivelog edm
+[2026-01-17 08:30:01,599, root, Thread-2, INFO] Redo logs edm
+[2026-01-17 08:30:01,881, root, Thread-3, INFO] Tablespaces lab
+[2026-01-17 08:30:01,901, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-17 08:30:03,609, root, Thread-2, INFO] Tablespaces edm
+[2026-01-17 08:30:03,691, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-17 08:30:03,856, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-17 08:30:03,900, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-17 08:30:21,858, root, Thread-1, INFO] Logs info rch
+[2026-01-17 08:30:21,862, root, Thread-1, INFO] AMMS cert rch
+[2026-01-17 08:30:21,873, root, Thread-1, INFO] Redo logs rch
+[2026-01-17 08:30:22,169, root, Thread-1, INFO] Tablespaces rch
+[2026-01-17 08:30:22,214, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-17 08:30:22,225, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-17 08:30:22,225, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-17 08:30:22,249, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-17 08:30:22,251, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-18 08:30:01,579, root, MainThread, INFO] Report start: 18-01-2026
+[2026-01-18 08:30:01,580, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] period = 3
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_port = 
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-18 08:30:01,581, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-18 08:30:01,582, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-18 08:30:01,582, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-18 08:30:01,585, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-18 08:30:01,594, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-18 08:30:01,595, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-18 08:30:01,596, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-18 08:30:01,629, root, Thread-3, INFO] Executiong on LAB
+[2026-01-18 08:30:01,631, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-18 08:30:01,631, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-18 08:30:01,631, root, Thread-2, INFO] Executiong on EDM
+[2026-01-18 08:30:01,632, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-18 08:30:01,632, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-18 08:30:01,633, root, Thread-4, INFO] Executiong on MPI
+[2026-01-18 08:30:01,634, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-18 08:30:01,634, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-18 08:30:01,637, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-18 08:30:01,645, root, Thread-1, INFO] Executiong on RCH
+[2026-01-18 08:30:01,647, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-18 08:30:01,647, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-18 08:30:01,650, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-18 08:30:01,652, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-18 08:30:01,659, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-18 08:30:01,787, root, Thread-2, INFO] Database size EDM 79.76
+[2026-01-18 08:30:01,790, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-18 08:30:01,798, root, Thread-2, INFO] Full backup edm
+[2026-01-18 08:30:01,805, root, Thread-2, INFO] Archivelog edm
+[2026-01-18 08:30:01,808, root, Thread-2, INFO] Redo logs edm
+[2026-01-18 08:30:01,904, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-18 08:30:01,906, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-18 08:30:01,915, root, Thread-3, INFO] Database size LAB 24.18
+[2026-01-18 08:30:01,916, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-18 08:30:01,922, root, Thread-3, INFO] Full backup lab
+[2026-01-18 08:30:01,930, root, Thread-4, INFO] Full backup mpi
+[2026-01-18 08:30:01,933, root, Thread-3, INFO] Archivelog lab
+[2026-01-18 08:30:01,937, root, Thread-3, INFO] Redo logs lab
+[2026-01-18 08:30:01,953, root, Thread-4, INFO] Archivelog mpi
+[2026-01-18 08:30:01,958, root, Thread-4, INFO] Redo logs mpi
+[2026-01-18 08:30:02,119, root, Thread-1, INFO] Database size RCH 1204.42
+[2026-01-18 08:30:02,121, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-18 08:30:02,127, root, Thread-1, INFO] Full backup rch
+[2026-01-18 08:30:02,135, root, Thread-1, INFO] Archivelog rch
+[2026-01-18 08:30:03,910, root, Thread-2, INFO] Tablespaces edm
+[2026-01-18 08:30:03,953, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-18 08:30:04,292, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-18 08:30:04,334, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-18 08:30:04,800, root, Thread-3, INFO] Tablespaces lab
+[2026-01-18 08:30:04,832, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-18 08:30:23,214, root, Thread-1, INFO] Logs info rch
+[2026-01-18 08:30:23,218, root, Thread-1, INFO] AMMS cert rch
+[2026-01-18 08:30:23,229, root, Thread-1, INFO] Redo logs rch
+[2026-01-18 08:30:23,475, root, Thread-1, INFO] Tablespaces rch
+[2026-01-18 08:30:23,520, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-18 08:30:23,529, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-18 08:30:23,529, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-18 08:30:23,554, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-18 08:30:23,557, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-21 08:30:01,818, root, MainThread, INFO] Report start: 21-01-2026
+[2026-01-21 08:30:01,819, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] period = 3
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_port = 
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-21 08:30:01,820, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-21 08:30:01,821, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-21 08:30:01,821, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-21 08:30:01,821, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-21 08:30:01,821, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-21 08:30:01,821, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-21 08:30:01,825, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-21 08:30:01,837, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-21 08:30:01,839, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-21 08:30:01,839, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-21 08:30:01,872, root, Thread-4, INFO] Executiong on MPI
+[2026-01-21 08:30:01,875, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-21 08:30:01,875, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-21 08:30:01,878, root, Thread-1, INFO] Executiong on RCH
+[2026-01-21 08:30:01,879, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-21 08:30:01,879, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-21 08:30:01,881, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-21 08:30:01,890, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-21 08:30:01,891, root, Thread-3, INFO] Executiong on LAB
+[2026-01-21 08:30:01,892, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-21 08:30:01,892, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-21 08:30:01,896, root, Thread-2, INFO] Executiong on EDM
+[2026-01-21 08:30:01,900, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-21 08:30:01,904, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-21 08:30:01,904, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-21 08:30:01,926, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-21 08:30:02,101, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-21 08:30:02,104, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-21 08:30:02,116, root, Thread-4, INFO] Full backup mpi
+[2026-01-21 08:30:02,125, root, Thread-4, INFO] Archivelog mpi
+[2026-01-21 08:30:02,131, root, Thread-4, INFO] Redo logs mpi
+[2026-01-21 08:30:02,208, root, Thread-2, INFO] Database size EDM 79.9
+[2026-01-21 08:30:02,226, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-21 08:30:02,266, root, Thread-3, INFO] Database size LAB 24.26
+[2026-01-21 08:30:02,277, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-21 08:30:02,290, root, Thread-3, INFO] Full backup lab
+[2026-01-21 08:30:02,308, root, Thread-2, INFO] Full backup edm
+[2026-01-21 08:30:02,332, root, Thread-3, INFO] Archivelog lab
+[2026-01-21 08:30:02,351, root, Thread-3, INFO] Redo logs lab
+[2026-01-21 08:30:02,354, root, Thread-2, INFO] Archivelog edm
+[2026-01-21 08:30:02,366, root, Thread-2, INFO] Redo logs edm
+[2026-01-21 08:30:02,895, root, Thread-1, INFO] Database size RCH 1206.1
+[2026-01-21 08:30:02,897, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-21 08:30:02,906, root, Thread-1, INFO] Full backup rch
+[2026-01-21 08:30:02,916, root, Thread-1, INFO] Archivelog rch
+[2026-01-21 08:30:03,156, root, Thread-3, INFO] Tablespaces lab
+[2026-01-21 08:30:03,190, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-21 08:30:04,893, root, Thread-2, INFO] Tablespaces edm
+[2026-01-21 08:30:04,948, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-21 08:30:05,032, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-21 08:30:05,064, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-21 08:30:21,875, root, Thread-1, INFO] Logs info rch
+[2026-01-21 08:30:21,877, root, Thread-1, INFO] AMMS cert rch
+[2026-01-21 08:30:21,890, root, Thread-1, INFO] Redo logs rch
+[2026-01-21 08:30:22,152, root, Thread-1, INFO] Tablespaces rch
+[2026-01-21 08:30:22,158, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-21 08:30:22,170, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-21 08:30:22,170, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-21 08:30:22,204, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-21 08:30:22,208, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-24 08:30:01,639, root, MainThread, INFO] Report start: 24-01-2026
+[2026-01-24 08:30:01,640, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] period = 3
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_port = 
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-24 08:30:01,641, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-24 08:30:01,645, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-24 08:30:01,654, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-24 08:30:01,656, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-24 08:30:01,656, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-24 08:30:01,687, root, Thread-2, INFO] Executiong on EDM
+[2026-01-24 08:30:01,689, root, Thread-4, INFO] Executiong on MPI
+[2026-01-24 08:30:01,691, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-24 08:30:01,691, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-24 08:30:01,695, root, Thread-3, INFO] Executiong on LAB
+[2026-01-24 08:30:01,700, root, Thread-1, INFO] Executiong on RCH
+[2026-01-24 08:30:01,700, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-24 08:30:01,700, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-24 08:30:01,702, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-24 08:30:01,702, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-24 08:30:01,703, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-24 08:30:01,703, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-24 08:30:01,705, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-24 08:30:01,705, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-24 08:30:01,714, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-24 08:30:01,729, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-24 08:30:01,900, root, Thread-2, INFO] Database size EDM 80.23
+[2026-01-24 08:30:01,913, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-24 08:30:01,950, root, Thread-2, INFO] Full backup edm
+[2026-01-24 08:30:01,961, root, Thread-3, INFO] Database size LAB 24.32
+[2026-01-24 08:30:01,965, root, Thread-2, INFO] Archivelog edm
+[2026-01-24 08:30:01,968, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-24 08:30:01,971, root, Thread-2, INFO] Redo logs edm
+[2026-01-24 08:30:02,000, root, Thread-3, INFO] Full backup lab
+[2026-01-24 08:30:02,003, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-24 08:30:02,004, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-24 08:30:02,015, root, Thread-3, INFO] Archivelog lab
+[2026-01-24 08:30:02,020, root, Thread-3, INFO] Redo logs lab
+[2026-01-24 08:30:02,025, root, Thread-4, INFO] Full backup mpi
+[2026-01-24 08:30:02,045, root, Thread-4, INFO] Archivelog mpi
+[2026-01-24 08:30:02,049, root, Thread-4, INFO] Redo logs mpi
+[2026-01-24 08:30:02,352, root, Thread-1, INFO] Database size RCH 1206.24
+[2026-01-24 08:30:02,354, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-24 08:30:02,360, root, Thread-1, INFO] Full backup rch
+[2026-01-24 08:30:02,367, root, Thread-1, INFO] Archivelog rch
+[2026-01-24 08:30:02,593, root, Thread-3, INFO] Tablespaces lab
+[2026-01-24 08:30:02,627, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-24 08:30:04,143, root, Thread-2, INFO] Tablespaces edm
+[2026-01-24 08:30:04,198, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-24 08:30:04,561, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-24 08:30:04,611, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-24 08:30:21,850, root, Thread-1, INFO] Logs info rch
+[2026-01-24 08:30:21,854, root, Thread-1, INFO] AMMS cert rch
+[2026-01-24 08:30:21,866, root, Thread-1, INFO] Redo logs rch
+[2026-01-24 08:30:22,148, root, Thread-1, INFO] Tablespaces rch
+[2026-01-24 08:30:22,156, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-24 08:30:22,167, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-24 08:30:22,167, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-24 08:30:22,201, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-24 08:30:22,206, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-25 08:30:01,582, root, MainThread, INFO] Report start: 25-01-2026
+[2026-01-25 08:30:01,583, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] period = 3
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_port = 
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-25 08:30:01,584, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-25 08:30:01,585, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-25 08:30:01,588, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-25 08:30:01,597, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-25 08:30:01,599, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-25 08:30:01,598, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-25 08:30:01,629, root, Thread-3, INFO] Executiong on LAB
+[2026-01-25 08:30:01,629, root, Thread-4, INFO] Executiong on MPI
+[2026-01-25 08:30:01,632, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-25 08:30:01,632, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-25 08:30:01,635, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-25 08:30:01,635, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-25 08:30:01,636, root, Thread-2, INFO] Executiong on EDM
+[2026-01-25 08:30:01,637, root, Thread-1, INFO] Executiong on RCH
+[2026-01-25 08:30:01,638, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-25 08:30:01,638, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-25 08:30:01,640, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-25 08:30:01,641, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-25 08:30:01,644, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-25 08:30:01,645, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-25 08:30:01,653, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-25 08:30:01,677, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-25 08:30:01,803, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-25 08:30:01,806, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-25 08:30:01,814, root, Thread-4, INFO] Full backup mpi
+[2026-01-25 08:30:01,816, root, Thread-2, INFO] Database size EDM 80.23
+[2026-01-25 08:30:01,818, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-25 08:30:01,824, root, Thread-4, INFO] Archivelog mpi
+[2026-01-25 08:30:01,826, root, Thread-2, INFO] Full backup edm
+[2026-01-25 08:30:01,831, root, Thread-4, INFO] Redo logs mpi
+[2026-01-25 08:30:01,837, root, Thread-2, INFO] Archivelog edm
+[2026-01-25 08:30:01,841, root, Thread-2, INFO] Redo logs edm
+[2026-01-25 08:30:01,954, root, Thread-3, INFO] Database size LAB 24.34
+[2026-01-25 08:30:01,961, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-25 08:30:01,998, root, Thread-3, INFO] Full backup lab
+[2026-01-25 08:30:02,018, root, Thread-3, INFO] Archivelog lab
+[2026-01-25 08:30:02,025, root, Thread-3, INFO] Redo logs lab
+[2026-01-25 08:30:02,311, root, Thread-1, INFO] Database size RCH 1206.24
+[2026-01-25 08:30:02,314, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-25 08:30:02,321, root, Thread-1, INFO] Full backup rch
+[2026-01-25 08:30:02,329, root, Thread-1, INFO] Archivelog rch
+[2026-01-25 08:30:03,925, root, Thread-2, INFO] Tablespaces edm
+[2026-01-25 08:30:03,975, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-25 08:30:04,216, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-25 08:30:04,270, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-25 08:30:05,041, root, Thread-3, INFO] Tablespaces lab
+[2026-01-25 08:30:05,071, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-25 08:30:21,257, root, Thread-1, INFO] Logs info rch
+[2026-01-25 08:30:21,262, root, Thread-1, INFO] AMMS cert rch
+[2026-01-25 08:30:21,281, root, Thread-1, INFO] Redo logs rch
+[2026-01-25 08:30:21,533, root, Thread-1, INFO] Tablespaces rch
+[2026-01-25 08:30:21,541, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-25 08:30:21,552, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-25 08:30:21,552, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-25 08:30:21,576, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-25 08:30:21,579, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-28 08:30:01,226, root, MainThread, INFO] Report start: 28-01-2026
+[2026-01-28 08:30:01,227, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] period = 3
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_port = 
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-28 08:30:01,228, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-28 08:30:01,229, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-28 08:30:01,229, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-28 08:30:01,229, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-28 08:30:01,233, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-28 08:30:01,243, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-28 08:30:01,245, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-28 08:30:01,250, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-28 08:30:01,307, root, Thread-2, INFO] Executiong on EDM
+[2026-01-28 08:30:01,330, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-28 08:30:01,331, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-28 08:30:01,334, root, Thread-4, INFO] Executiong on MPI
+[2026-01-28 08:30:01,336, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-28 08:30:01,336, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-28 08:30:01,337, root, Thread-1, INFO] Executiong on RCH
+[2026-01-28 08:30:01,340, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-28 08:30:01,341, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-28 08:30:01,343, root, Thread-3, INFO] Executiong on LAB
+[2026-01-28 08:30:01,346, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-28 08:30:01,348, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-28 08:30:01,351, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-28 08:30:01,354, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-28 08:30:01,354, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-28 08:30:01,372, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-28 08:30:01,586, root, Thread-2, INFO] Database size EDM 80.39
+[2026-01-28 08:30:01,593, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-28 08:30:01,628, root, Thread-3, INFO] Database size LAB 24.4
+[2026-01-28 08:30:01,634, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-28 08:30:01,638, root, Thread-2, INFO] Full backup edm
+[2026-01-28 08:30:01,654, root, Thread-2, INFO] Archivelog edm
+[2026-01-28 08:30:01,657, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-28 08:30:01,658, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-28 08:30:01,666, root, Thread-2, INFO] Redo logs edm
+[2026-01-28 08:30:01,668, root, Thread-3, INFO] Full backup lab
+[2026-01-28 08:30:01,678, root, Thread-4, INFO] Full backup mpi
+[2026-01-28 08:30:01,684, root, Thread-3, INFO] Archivelog lab
+[2026-01-28 08:30:01,689, root, Thread-3, INFO] Redo logs lab
+[2026-01-28 08:30:01,696, root, Thread-4, INFO] Archivelog mpi
+[2026-01-28 08:30:01,713, root, Thread-4, INFO] Redo logs mpi
+[2026-01-28 08:30:02,206, root, Thread-1, INFO] Database size RCH 1206.25
+[2026-01-28 08:30:02,212, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-28 08:30:02,222, root, Thread-1, INFO] Full backup rch
+[2026-01-28 08:30:02,283, root, Thread-1, INFO] Archivelog rch
+[2026-01-28 08:30:02,288, root, Thread-3, INFO] Tablespaces lab
+[2026-01-28 08:30:02,320, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-28 08:30:03,948, root, Thread-2, INFO] Tablespaces edm
+[2026-01-28 08:30:04,003, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-28 08:30:04,272, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-28 08:30:04,314, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-28 08:30:21,528, root, Thread-1, INFO] Logs info rch
+[2026-01-28 08:30:21,530, root, Thread-1, INFO] AMMS cert rch
+[2026-01-28 08:30:21,543, root, Thread-1, INFO] Redo logs rch
+[2026-01-28 08:30:21,791, root, Thread-1, INFO] Tablespaces rch
+[2026-01-28 08:30:21,798, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-28 08:30:21,807, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-28 08:30:21,808, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-28 08:30:21,831, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-28 08:30:21,834, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-31 08:30:01,338, root, MainThread, INFO] Report start: 31-01-2026
+[2026-01-31 08:30:01,339, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] dataguard = no
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] multitenant = no
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] logs_check = rch
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] oradata = fs
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] period = 3
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_server = localhost
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_port = 
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] threshold = 15
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] app_amms = rch
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] app_im = lab
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] app_edm = 
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-01-31 08:30:01,340, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-01-31 08:30:01,344, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-01-31 08:30:01,356, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-01-31 08:30:01,358, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-01-31 08:30:01,369, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-01-31 08:30:01,412, root, Thread-3, INFO] Executiong on LAB
+[2026-01-31 08:30:01,414, root, Thread-2, INFO] Executiong on EDM
+[2026-01-31 08:30:01,422, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-31 08:30:01,422, root, Thread-3, INFO] Checking IM version LAB
+[2026-01-31 08:30:01,422, root, Thread-1, INFO] Executiong on RCH
+[2026-01-31 08:30:01,423, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-31 08:30:01,423, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-01-31 08:30:01,423, root, Thread-4, INFO] Executiong on MPI
+[2026-01-31 08:30:01,423, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-31 08:30:01,424, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-01-31 08:30:01,425, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-01-31 08:30:01,425, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-01-31 08:30:01,427, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-01-31 08:30:01,435, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-01-31 08:30:01,440, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-01-31 08:30:01,450, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-01-31 08:30:01,665, root, Thread-3, INFO] Database size LAB 24.49
+[2026-01-31 08:30:01,672, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-01-31 08:30:01,686, root, Thread-2, INFO] Database size EDM 80.8
+[2026-01-31 08:30:01,696, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-01-31 08:30:01,707, root, Thread-3, INFO] Full backup lab
+[2026-01-31 08:30:01,722, root, Thread-3, INFO] Archivelog lab
+[2026-01-31 08:30:01,732, root, Thread-3, INFO] Redo logs lab
+[2026-01-31 08:30:01,756, root, Thread-4, INFO] Database size MPI 3.8
+[2026-01-31 08:30:01,757, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-01-31 08:30:01,760, root, Thread-2, INFO] Full backup edm
+[2026-01-31 08:30:01,776, root, Thread-2, INFO] Archivelog edm
+[2026-01-31 08:30:01,782, root, Thread-2, INFO] Redo logs edm
+[2026-01-31 08:30:01,788, root, Thread-4, INFO] Full backup mpi
+[2026-01-31 08:30:01,820, root, Thread-4, INFO] Archivelog mpi
+[2026-01-31 08:30:01,826, root, Thread-4, INFO] Redo logs mpi
+[2026-01-31 08:30:01,894, root, Thread-1, INFO] Database size RCH 1206.28
+[2026-01-31 08:30:01,896, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-01-31 08:30:01,902, root, Thread-1, INFO] Full backup rch
+[2026-01-31 08:30:01,946, root, Thread-1, INFO] Archivelog rch
+[2026-01-31 08:30:02,479, root, Thread-3, INFO] Tablespaces lab
+[2026-01-31 08:30:02,510, root, Thread-3, INFO] Oldest statistics lab
+[2026-01-31 08:30:04,528, root, Thread-2, INFO] Tablespaces edm
+[2026-01-31 08:30:04,581, root, Thread-2, INFO] Oldest statistics edm
+[2026-01-31 08:30:04,818, root, Thread-4, INFO] Tablespaces mpi
+[2026-01-31 08:30:04,855, root, Thread-4, INFO] Oldest statistics mpi
+[2026-01-31 08:30:20,738, root, Thread-1, INFO] Logs info rch
+[2026-01-31 08:30:20,741, root, Thread-1, INFO] AMMS cert rch
+[2026-01-31 08:30:20,752, root, Thread-1, INFO] Redo logs rch
+[2026-01-31 08:30:21,014, root, Thread-1, INFO] Tablespaces rch
+[2026-01-31 08:30:21,021, root, Thread-1, INFO] Oldest statistics rch
+[2026-01-31 08:30:21,034, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-01-31 08:30:21,035, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-01-31 08:30:21,061, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-01-31 08:30:21,064, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-01 08:30:01,713, root, MainThread, INFO] Report start: 01-02-2026
+[2026-02-01 08:30:01,713, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] period = 3
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_port = 
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-01 08:30:01,714, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-01 08:30:01,715, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-01 08:30:01,715, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-01 08:30:01,715, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-01 08:30:01,715, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-01 08:30:01,715, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-01 08:30:01,718, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-01 08:30:01,728, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-01 08:30:01,729, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-01 08:30:01,729, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-01 08:30:01,762, root, Thread-4, INFO] Executiong on MPI
+[2026-02-01 08:30:01,764, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-01 08:30:01,764, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-01 08:30:01,765, root, Thread-3, INFO] Executiong on LAB
+[2026-02-01 08:30:01,766, root, Thread-2, INFO] Executiong on EDM
+[2026-02-01 08:30:01,767, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-01 08:30:01,767, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-01 08:30:01,770, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-01 08:30:01,771, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-01 08:30:01,775, root, Thread-1, INFO] Executiong on RCH
+[2026-02-01 08:30:01,777, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-01 08:30:01,777, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-01 08:30:01,779, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-01 08:30:01,779, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-01 08:30:01,781, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-01 08:30:01,794, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-01 08:30:01,883, root, Thread-2, INFO] Database size EDM 80.81
+[2026-02-01 08:30:01,885, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-01 08:30:01,893, root, Thread-2, INFO] Full backup edm
+[2026-02-01 08:30:01,901, root, Thread-2, INFO] Archivelog edm
+[2026-02-01 08:30:01,905, root, Thread-2, INFO] Redo logs edm
+[2026-02-01 08:30:01,960, root, Thread-3, INFO] Database size LAB 24.49
+[2026-02-01 08:30:01,964, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-01 08:30:01,979, root, Thread-3, INFO] Full backup lab
+[2026-02-01 08:30:01,987, root, Thread-3, INFO] Archivelog lab
+[2026-02-01 08:30:01,991, root, Thread-3, INFO] Redo logs lab
+[2026-02-01 08:30:02,090, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-01 08:30:02,092, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-01 08:30:02,110, root, Thread-4, INFO] Full backup mpi
+[2026-02-01 08:30:02,127, root, Thread-4, INFO] Archivelog mpi
+[2026-02-01 08:30:02,131, root, Thread-4, INFO] Redo logs mpi
+[2026-02-01 08:30:02,440, root, Thread-1, INFO] Database size RCH 1206.28
+[2026-02-01 08:30:02,442, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-01 08:30:02,449, root, Thread-1, INFO] Full backup rch
+[2026-02-01 08:30:02,457, root, Thread-1, INFO] Archivelog rch
+[2026-02-01 08:30:03,891, root, Thread-2, INFO] Tablespaces edm
+[2026-02-01 08:30:03,934, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-01 08:30:04,425, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-01 08:30:04,473, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-01 08:30:04,992, root, Thread-3, INFO] Tablespaces lab
+[2026-02-01 08:30:05,021, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-01 08:30:21,444, root, Thread-1, INFO] Logs info rch
+[2026-02-01 08:30:21,447, root, Thread-1, INFO] AMMS cert rch
+[2026-02-01 08:30:21,459, root, Thread-1, INFO] Redo logs rch
+[2026-02-01 08:30:21,724, root, Thread-1, INFO] Tablespaces rch
+[2026-02-01 08:30:21,732, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-01 08:30:21,744, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-01 08:30:21,744, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-01 08:30:21,774, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-01 08:30:21,777, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-04 08:30:01,593, root, MainThread, INFO] Report start: 04-02-2026
+[2026-02-04 08:30:01,594, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] period = 3
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_port = 
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] email_cc = b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'b.kasprzik@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-04 08:30:01,595, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-04 08:30:01,603, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-04 08:30:01,632, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-04 08:30:01,645, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-04 08:30:01,655, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-04 08:30:01,742, root, Thread-2, INFO] Executiong on EDM
+[2026-02-04 08:30:01,748, root, Thread-1, INFO] Executiong on RCH
+[2026-02-04 08:30:01,751, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-04 08:30:01,751, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-04 08:30:01,754, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-04 08:30:01,760, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-04 08:30:01,760, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-04 08:30:01,771, root, Thread-3, INFO] Executiong on LAB
+[2026-02-04 08:30:01,777, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-04 08:30:01,777, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-04 08:30:01,779, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-04 08:30:01,804, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-04 08:30:01,809, root, Thread-4, INFO] Executiong on MPI
+[2026-02-04 08:30:01,829, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-04 08:30:01,829, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-04 08:30:01,856, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-04 08:30:01,952, root, Thread-3, INFO] Database size LAB 24.49
+[2026-02-04 08:30:01,966, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-04 08:30:02,027, root, Thread-3, INFO] Full backup lab
+[2026-02-04 08:30:02,035, root, Thread-3, INFO] Archivelog lab
+[2026-02-04 08:30:02,054, root, Thread-3, INFO] Redo logs lab
+[2026-02-04 08:30:02,198, root, Thread-2, INFO] Database size EDM 80.94
+[2026-02-04 08:30:02,206, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-04 08:30:02,213, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-04 08:30:02,215, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-04 08:30:02,224, root, Thread-4, INFO] Full backup mpi
+[2026-02-04 08:30:02,250, root, Thread-4, INFO] Archivelog mpi
+[2026-02-04 08:30:02,262, root, Thread-4, INFO] Redo logs mpi
+[2026-02-04 08:30:02,299, root, Thread-2, INFO] Full backup edm
+[2026-02-04 08:30:02,351, root, Thread-2, INFO] Archivelog edm
+[2026-02-04 08:30:02,369, root, Thread-2, INFO] Redo logs edm
+[2026-02-04 08:30:02,964, root, Thread-3, INFO] Tablespaces lab
+[2026-02-04 08:30:03,019, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-04 08:30:03,021, root, Thread-1, INFO] Database size RCH 1206.97
+[2026-02-04 08:30:03,025, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-04 08:30:03,036, root, Thread-1, INFO] Full backup rch
+[2026-02-04 08:30:03,047, root, Thread-1, INFO] Archivelog rch
+[2026-02-04 08:30:06,802, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-04 08:30:06,862, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-04 08:30:08,030, root, Thread-2, INFO] Tablespaces edm
+[2026-02-04 08:30:08,082, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-04 08:30:27,705, root, Thread-1, INFO] Logs info rch
+[2026-02-04 08:30:27,727, root, Thread-1, INFO] AMMS cert rch
+[2026-02-04 08:30:27,743, root, Thread-1, INFO] Redo logs rch
+[2026-02-04 08:30:28,060, root, Thread-1, INFO] Tablespaces rch
+[2026-02-04 08:30:28,076, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-04 08:30:28,094, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-04 08:30:28,094, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-04 08:30:28,134, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-04 08:30:28,138, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; b.kasprzik@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-07 08:30:01,676, root, MainThread, INFO] Report start: 07-02-2026
+[2026-02-07 08:30:01,677, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] period = 3
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_port = 
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] email_cc = it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-07 08:30:01,678, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-07 08:30:01,679, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-07 08:30:01,679, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-07 08:30:01,679, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-07 08:30:01,679, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'it@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-07 08:30:01,679, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-07 08:30:01,682, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-07 08:30:01,691, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-07 08:30:01,692, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-07 08:30:01,693, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-07 08:30:01,721, root, Thread-3, INFO] Executiong on LAB
+[2026-02-07 08:30:01,721, root, Thread-2, INFO] Executiong on EDM
+[2026-02-07 08:30:01,729, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-07 08:30:01,729, root, Thread-4, INFO] Executiong on MPI
+[2026-02-07 08:30:01,729, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-07 08:30:01,730, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-07 08:30:01,730, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-07 08:30:01,732, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-07 08:30:01,732, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-07 08:30:01,734, root, Thread-1, INFO] Executiong on RCH
+[2026-02-07 08:30:01,735, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-07 08:30:01,735, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-07 08:30:01,735, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-07 08:30:01,739, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-07 08:30:01,747, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-07 08:30:01,766, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-07 08:30:01,933, root, Thread-2, INFO] Database size EDM 81.24
+[2026-02-07 08:30:01,937, root, Thread-3, INFO] Database size LAB 24.7
+[2026-02-07 08:30:01,940, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-07 08:30:01,943, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-07 08:30:01,947, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-07 08:30:01,948, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-07 08:30:01,953, root, Thread-4, INFO] Full backup mpi
+[2026-02-07 08:30:01,960, root, Thread-4, INFO] Archivelog mpi
+[2026-02-07 08:30:01,964, root, Thread-4, INFO] Redo logs mpi
+[2026-02-07 08:30:01,970, root, Thread-3, INFO] Full backup lab
+[2026-02-07 08:30:01,971, root, Thread-1, INFO] Database size RCH 1206.99
+[2026-02-07 08:30:01,973, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-07 08:30:01,975, root, Thread-2, INFO] Full backup edm
+[2026-02-07 08:30:01,980, root, Thread-1, INFO] Full backup rch
+[2026-02-07 08:30:01,987, root, Thread-3, INFO] Archivelog lab
+[2026-02-07 08:30:01,991, root, Thread-1, INFO] Archivelog rch
+[2026-02-07 08:30:01,994, root, Thread-3, INFO] Redo logs lab
+[2026-02-07 08:30:01,995, root, Thread-2, INFO] Archivelog edm
+[2026-02-07 08:30:02,001, root, Thread-2, INFO] Redo logs edm
+[2026-02-07 08:30:02,642, root, Thread-3, INFO] Tablespaces lab
+[2026-02-07 08:30:02,672, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-07 08:30:04,126, root, Thread-2, INFO] Tablespaces edm
+[2026-02-07 08:30:04,187, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-07 08:30:04,465, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-07 08:30:04,506, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-07 08:30:21,737, root, Thread-1, INFO] Logs info rch
+[2026-02-07 08:30:21,741, root, Thread-1, INFO] AMMS cert rch
+[2026-02-07 08:30:21,760, root, Thread-1, INFO] Redo logs rch
+[2026-02-07 08:30:22,095, root, Thread-1, INFO] Tablespaces rch
+[2026-02-07 08:30:22,102, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-07 08:30:22,111, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-07 08:30:22,111, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-07 08:30:22,143, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-07 08:30:22,146, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-08 08:30:01,281, root, MainThread, INFO] Report start: 08-02-2026
+[2026-02-08 08:30:01,281, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] period = 3
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] email_port = 
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-08 08:30:01,283, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] email_cc = it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'it@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-08 08:30:01,284, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-08 08:30:01,291, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-08 08:30:01,303, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-08 08:30:01,303, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-08 08:30:01,305, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-08 08:30:01,336, root, Thread-2, INFO] Executiong on EDM
+[2026-02-08 08:30:01,339, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-08 08:30:01,340, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-08 08:30:01,341, root, Thread-4, INFO] Executiong on MPI
+[2026-02-08 08:30:01,342, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-08 08:30:01,342, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-08 08:30:01,346, root, Thread-3, INFO] Executiong on LAB
+[2026-02-08 08:30:01,351, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-08 08:30:01,352, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-08 08:30:01,352, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-08 08:30:01,355, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-08 08:30:01,363, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-08 08:30:01,364, root, Thread-1, INFO] Executiong on RCH
+[2026-02-08 08:30:01,367, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-08 08:30:01,367, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-08 08:30:01,372, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-08 08:30:01,433, root, Thread-2, INFO] Database size EDM 81.25
+[2026-02-08 08:30:01,436, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-08 08:30:01,444, root, Thread-2, INFO] Full backup edm
+[2026-02-08 08:30:01,452, root, Thread-2, INFO] Archivelog edm
+[2026-02-08 08:30:01,455, root, Thread-2, INFO] Redo logs edm
+[2026-02-08 08:30:01,502, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-08 08:30:01,504, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-08 08:30:01,510, root, Thread-4, INFO] Full backup mpi
+[2026-02-08 08:30:01,520, root, Thread-4, INFO] Archivelog mpi
+[2026-02-08 08:30:01,526, root, Thread-4, INFO] Redo logs mpi
+[2026-02-08 08:30:01,527, root, Thread-3, INFO] Database size LAB 24.7
+[2026-02-08 08:30:01,532, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-08 08:30:01,550, root, Thread-3, INFO] Full backup lab
+[2026-02-08 08:30:01,558, root, Thread-3, INFO] Archivelog lab
+[2026-02-08 08:30:01,562, root, Thread-3, INFO] Redo logs lab
+[2026-02-08 08:30:02,044, root, Thread-1, INFO] Database size RCH 1206.99
+[2026-02-08 08:30:02,046, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-08 08:30:02,052, root, Thread-1, INFO] Full backup rch
+[2026-02-08 08:30:02,059, root, Thread-1, INFO] Archivelog rch
+[2026-02-08 08:30:03,519, root, Thread-2, INFO] Tablespaces edm
+[2026-02-08 08:30:03,562, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-08 08:30:03,890, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-08 08:30:03,926, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-08 08:30:04,584, root, Thread-3, INFO] Tablespaces lab
+[2026-02-08 08:30:04,610, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-08 08:30:20,665, root, Thread-1, INFO] Logs info rch
+[2026-02-08 08:30:20,669, root, Thread-1, INFO] AMMS cert rch
+[2026-02-08 08:30:20,680, root, Thread-1, INFO] Redo logs rch
+[2026-02-08 08:30:20,930, root, Thread-1, INFO] Tablespaces rch
+[2026-02-08 08:30:20,938, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-08 08:30:20,947, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-08 08:30:20,947, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-08 08:30:20,970, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-08 08:30:20,973, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-11 08:30:01,764, root, MainThread, INFO] Report start: 11-02-2026
+[2026-02-11 08:30:01,764, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-11 08:30:01,765, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-11 08:30:01,765, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-11 08:30:01,765, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-11 08:30:01,765, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-11 08:30:01,765, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] period = 3
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_port = 
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] email_cc = it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'it@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-11 08:30:01,766, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-11 08:30:01,770, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-11 08:30:01,779, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-11 08:30:01,780, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-11 08:30:01,780, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-11 08:30:01,825, root, Thread-4, INFO] Executiong on MPI
+[2026-02-11 08:30:01,825, root, Thread-2, INFO] Executiong on EDM
+[2026-02-11 08:30:01,826, root, Thread-3, INFO] Executiong on LAB
+[2026-02-11 08:30:01,828, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-11 08:30:01,828, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-11 08:30:01,832, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-11 08:30:01,832, root, Thread-1, INFO] Executiong on RCH
+[2026-02-11 08:30:01,832, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-11 08:30:01,833, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-11 08:30:01,833, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-11 08:30:01,834, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-11 08:30:01,834, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-11 08:30:01,835, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-11 08:30:01,840, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-11 08:30:01,848, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-11 08:30:01,864, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-11 08:30:01,945, root, Thread-3, INFO] Database size LAB 24.72
+[2026-02-11 08:30:01,950, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-11 08:30:01,985, root, Thread-3, INFO] Full backup lab
+[2026-02-11 08:30:01,993, root, Thread-3, INFO] Archivelog lab
+[2026-02-11 08:30:01,998, root, Thread-3, INFO] Redo logs lab
+[2026-02-11 08:30:02,035, root, Thread-2, INFO] Database size EDM 81.63
+[2026-02-11 08:30:02,042, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-11 08:30:02,087, root, Thread-2, INFO] Full backup edm
+[2026-02-11 08:30:02,103, root, Thread-2, INFO] Archivelog edm
+[2026-02-11 08:30:02,109, root, Thread-2, INFO] Redo logs edm
+[2026-02-11 08:30:02,117, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-11 08:30:02,120, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-11 08:30:02,126, root, Thread-4, INFO] Full backup mpi
+[2026-02-11 08:30:02,134, root, Thread-4, INFO] Archivelog mpi
+[2026-02-11 08:30:02,137, root, Thread-4, INFO] Redo logs mpi
+[2026-02-11 08:30:02,398, root, Thread-1, INFO] Database size RCH 1210.04
+[2026-02-11 08:30:02,400, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-11 08:30:02,406, root, Thread-1, INFO] Full backup rch
+[2026-02-11 08:30:02,413, root, Thread-1, INFO] Archivelog rch
+[2026-02-11 08:30:02,541, root, Thread-3, INFO] Tablespaces lab
+[2026-02-11 08:30:02,575, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-11 08:30:04,367, root, Thread-2, INFO] Tablespaces edm
+[2026-02-11 08:30:04,423, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-11 08:30:04,664, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-11 08:30:04,713, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-11 08:30:22,507, root, Thread-1, INFO] Logs info rch
+[2026-02-11 08:30:22,510, root, Thread-1, INFO] AMMS cert rch
+[2026-02-11 08:30:22,521, root, Thread-1, INFO] Redo logs rch
+[2026-02-11 08:30:22,785, root, Thread-1, INFO] Tablespaces rch
+[2026-02-11 08:30:22,793, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-11 08:30:22,805, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-11 08:30:22,805, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-11 08:30:22,833, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-11 08:30:22,837, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-14 08:30:01,882, root, MainThread, INFO] Report start: 14-02-2026
+[2026-02-14 08:30:01,883, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] period = 3
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_port = 
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] email_cc = it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-14 08:30:01,884, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'it@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-14 08:30:01,885, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-14 08:30:01,889, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-14 08:30:01,906, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-14 08:30:01,907, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-14 08:30:01,907, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-14 08:30:01,939, root, Thread-4, INFO] Executiong on MPI
+[2026-02-14 08:30:01,941, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-14 08:30:01,941, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-14 08:30:01,947, root, Thread-1, INFO] Executiong on RCH
+[2026-02-14 08:30:01,947, root, Thread-3, INFO] Executiong on LAB
+[2026-02-14 08:30:01,948, root, Thread-2, INFO] Executiong on EDM
+[2026-02-14 08:30:01,948, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-14 08:30:01,948, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-14 08:30:01,952, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-14 08:30:01,953, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-14 08:30:01,955, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-14 08:30:01,956, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-14 08:30:01,956, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-14 08:30:01,957, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-14 08:30:01,970, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-14 08:30:01,976, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-14 08:30:02,120, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-14 08:30:02,124, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-14 08:30:02,133, root, Thread-4, INFO] Full backup mpi
+[2026-02-14 08:30:02,141, root, Thread-4, INFO] Archivelog mpi
+[2026-02-14 08:30:02,143, root, Thread-2, INFO] Database size EDM 81.86
+[2026-02-14 08:30:02,145, root, Thread-4, INFO] Redo logs mpi
+[2026-02-14 08:30:02,149, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-14 08:30:02,179, root, Thread-3, INFO] Database size LAB 24.78
+[2026-02-14 08:30:02,181, root, Thread-2, INFO] Full backup edm
+[2026-02-14 08:30:02,184, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-14 08:30:02,196, root, Thread-2, INFO] Archivelog edm
+[2026-02-14 08:30:02,201, root, Thread-2, INFO] Redo logs edm
+[2026-02-14 08:30:02,218, root, Thread-3, INFO] Full backup lab
+[2026-02-14 08:30:02,225, root, Thread-3, INFO] Archivelog lab
+[2026-02-14 08:30:02,230, root, Thread-3, INFO] Redo logs lab
+[2026-02-14 08:30:02,657, root, Thread-1, INFO] Database size RCH 1210.07
+[2026-02-14 08:30:02,659, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-14 08:30:02,667, root, Thread-1, INFO] Full backup rch
+[2026-02-14 08:30:02,676, root, Thread-1, INFO] Archivelog rch
+[2026-02-14 08:30:02,956, root, Thread-3, INFO] Tablespaces lab
+[2026-02-14 08:30:02,987, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-14 08:30:04,394, root, Thread-2, INFO] Tablespaces edm
+[2026-02-14 08:30:04,448, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-14 08:30:04,674, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-14 08:30:04,708, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-14 08:30:21,678, root, Thread-1, INFO] Logs info rch
+[2026-02-14 08:30:21,681, root, Thread-1, INFO] AMMS cert rch
+[2026-02-14 08:30:21,693, root, Thread-1, INFO] Redo logs rch
+[2026-02-14 08:30:21,986, root, Thread-1, INFO] Tablespaces rch
+[2026-02-14 08:30:21,994, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-14 08:30:22,006, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-14 08:30:22,006, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-14 08:30:22,031, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-14 08:30:22,034, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-15 08:30:01,425, root, MainThread, INFO] Report start: 15-02-2026
+[2026-02-15 08:30:01,426, lib.utils, MainThread, INFO] {'config_file': 'etc/config.cfg', 'verbose': False}
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] -- Parsing config file: /home/oracle/bin/backup_analysis/etc/config.cfg
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] oracle_dbs = bckrman/sys@rch, bckrman/sys@edm, bckrman/sys@lab, bckrman/sys@mpi
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] dataguard = no
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] multitenant = no
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] use_sysdba = yes
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] logs_check = rch
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] oradata = fs
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] oradata_fs = /database
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] period = 3
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_server = localhost
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_port = 
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_title = SP ZOZ Szpital Psychiatryczny
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_from = Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_addr = bniedziela@ganso.pl
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_reply_to = amms@ganso.pl
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] email_cc = it@szpitaltoszek.pl; pws@ganso.pl
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] threshold = 15
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] logo = sp_logo.png
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] app_amms = rch
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] app_im = lab
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] app_docker = edm, mpi
+[2026-02-15 08:30:01,427, lib.utils, MainThread, INFO] app_edm = 
+[2026-02-15 08:30:01,428, lib.utils, MainThread, INFO] company = Ganso Sp. z o.o.
+[2026-02-15 08:30:01,428, lib.utils, MainThread, INFO] {'app_im': ['lab'], 'use_sysdba': 'yes', 'multitenant': 'no', 'period': '3', 'logs_check': ['rch'], 'email_reply_to': 'amms@ganso.pl', 'threshold': '15', 'logo': 'sp_logo.png', 'email_server': 'localhost', 'email_addr': 'bniedziela@ganso.pl', 'app_docker': ['edm', 'mpi'], 'email_cc': 'it@szpitaltoszek.pl; pws@ganso.pl', 'app_amms': ['rch'], 'company': 'Ganso Sp. z o.o.', 'oradata': ['fs'], 'oradata_fs': '/database', 'dataguard': 'no', 'email_title': 'SP ZOZ Szpital Psychiatryczny', 'oracle_dbs': [{'url': 'bckrman/sys@rch', 'sysdba': True, 'db': 'rch', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@edm', 'sysdba': True, 'db': 'edm', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@lab', 'sysdba': True, 'db': 'lab', 'dataguard': False, 'multitenant': False}, {'url': 'bckrman/sys@mpi', 'sysdba': True, 'db': 'mpi', 'dataguard': False, 'multitenant': False}], 'app_edm': [''], 'email_port': '', 'email_from': 'Oracle Backup SPT <orcl-bck-toszek@ganso.com.pl>'}
+[2026-02-15 08:30:01,428, lib.utils, MainThread, INFO] {'current_host': 'S08-ORACLE.SPT.local', 'fs_shared': ['/backup'], 'fs_check': ['/database', '/backup'], 'host_name': ['S08-ORACLE.sp.local']}
+[2026-02-15 08:30:01,431, lib.database_usage, Thread-1, INFO] Connecting to database: RCH
+[2026-02-15 08:30:01,440, lib.database_usage, Thread-2, INFO] Connecting to database: EDM
+[2026-02-15 08:30:01,441, lib.database_usage, Thread-3, INFO] Connecting to database: LAB
+[2026-02-15 08:30:01,441, lib.database_usage, Thread-4, INFO] Connecting to database: MPI
+[2026-02-15 08:30:01,478, root, Thread-2, INFO] Executiong on EDM
+[2026-02-15 08:30:01,480, root, Thread-4, INFO] Executiong on MPI
+[2026-02-15 08:30:01,482, root, Thread-4, INFO] MPI ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-15 08:30:01,482, root, Thread-4, INFO] Checking Docker App version MPI
+[2026-02-15 08:30:01,483, root, Thread-2, INFO] EDM ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-15 08:30:01,483, root, Thread-2, INFO] Checking Docker App version EDM
+[2026-02-15 08:30:01,489, root, Thread-3, INFO] Executiong on LAB
+[2026-02-15 08:30:01,492, root, Thread-3, INFO] LAB ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-15 08:30:01,492, root, Thread-3, INFO] Checking IM version LAB
+[2026-02-15 08:30:01,494, root, Thread-1, INFO] Executiong on RCH
+[2026-02-15 08:30:01,495, root, Thread-1, INFO] RCH ver.: Oracle Database 12c Standard Edition (12.1.0.2.0)
+[2026-02-15 08:30:01,495, root, Thread-1, INFO] Checking AMMS version RCH
+[2026-02-15 08:30:01,495, root, Thread-2, INFO] EDM DBID 2002126558
+[2026-02-15 08:30:01,498, root, Thread-4, INFO] MPI DBID 3620585422
+[2026-02-15 08:30:01,499, root, Thread-1, INFO] RCH DBID 3346491175
+[2026-02-15 08:30:01,503, root, Thread-3, INFO] LAB DBID 1570625458
+[2026-02-15 08:30:01,648, root, Thread-2, INFO] Database size EDM 81.86
+[2026-02-15 08:30:01,651, root, Thread-2, INFO] Fast Recovery Area edm
+[2026-02-15 08:30:01,658, root, Thread-2, INFO] Full backup edm
+[2026-02-15 08:30:01,666, root, Thread-2, INFO] Archivelog edm
+[2026-02-15 08:30:01,669, root, Thread-2, INFO] Redo logs edm
+[2026-02-15 08:30:01,698, root, Thread-3, INFO] Database size LAB 24.86
+[2026-02-15 08:30:01,703, root, Thread-3, INFO] Fast Recovery Area lab
+[2026-02-15 08:30:01,721, root, Thread-3, INFO] Full backup lab
+[2026-02-15 08:30:01,736, root, Thread-3, INFO] Archivelog lab
+[2026-02-15 08:30:01,741, root, Thread-3, INFO] Redo logs lab
+[2026-02-15 08:30:01,809, root, Thread-4, INFO] Database size MPI 3.8
+[2026-02-15 08:30:01,811, root, Thread-4, INFO] Fast Recovery Area mpi
+[2026-02-15 08:30:01,829, root, Thread-4, INFO] Full backup mpi
+[2026-02-15 08:30:01,846, root, Thread-4, INFO] Archivelog mpi
+[2026-02-15 08:30:01,850, root, Thread-4, INFO] Redo logs mpi
+[2026-02-15 08:30:02,323, root, Thread-1, INFO] Database size RCH 1210.08
+[2026-02-15 08:30:02,325, root, Thread-1, INFO] Fast Recovery Area rch
+[2026-02-15 08:30:02,332, root, Thread-1, INFO] Full backup rch
+[2026-02-15 08:30:02,339, root, Thread-1, INFO] Archivelog rch
+[2026-02-15 08:30:04,117, root, Thread-2, INFO] Tablespaces edm
+[2026-02-15 08:30:04,161, root, Thread-2, INFO] Oldest statistics edm
+[2026-02-15 08:30:04,615, root, Thread-4, INFO] Tablespaces mpi
+[2026-02-15 08:30:04,660, root, Thread-4, INFO] Oldest statistics mpi
+[2026-02-15 08:30:05,196, root, Thread-3, INFO] Tablespaces lab
+[2026-02-15 08:30:05,222, root, Thread-3, INFO] Oldest statistics lab
+[2026-02-15 08:30:21,313, root, Thread-1, INFO] Logs info rch
+[2026-02-15 08:30:21,317, root, Thread-1, INFO] AMMS cert rch
+[2026-02-15 08:30:21,329, root, Thread-1, INFO] Redo logs rch
+[2026-02-15 08:30:21,617, root, Thread-1, INFO] Tablespaces rch
+[2026-02-15 08:30:21,625, root, Thread-1, INFO] Oldest statistics rch
+[2026-02-15 08:30:21,637, root, MainThread, INFO] Filesystem storage usage: /database
+[2026-02-15 08:30:21,637, root, MainThread, INFO] Filesystem storage usage: /backup
+[2026-02-15 08:30:21,667, lib.email_creation, MainThread, INFO] Setup SMTP server connection
+[2026-02-15 08:30:21,669, lib.email_creation, MainThread, INFO] Sending email to: bniedziela@ganso.pl; it@szpitaltoszek.pl; pws@ganso.pl

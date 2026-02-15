@@ -1,0 +1,22 @@
+            <tr>
+                <td colspan="2">
+                    <!-- Database disk usage -->
+                    <table width="100%" cellspacing="4" cellpadding="0" style="border: 1px solid #a8a8a8; -webkit-border-radius:6px">
+                        <tr>
+                            <td align="center" colspan="5" style="border-bottom: 1px solid #a8a8a8;">
+                                {% if disk_type == 'asm' %}
+                                <p style="margin: 6px;">Przestrzeń dyskowa bazy danych (ASM):</p>
+                                {% else %}
+                                <p style=\"margin: 6px;\">Przestrzeń dyskowa bazy danych (system plików):</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {{ inner_table }}
+                    </table>
+                    <!-- Database disk usage -->
+                </td>
+            </tr>
+        </table>
+        <!-- Boxes -->
+    </td>
+</tr>

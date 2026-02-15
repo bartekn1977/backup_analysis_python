@@ -1,0 +1,12 @@
+{% for row in data %}
+<tr>
+    <td>
+        <h2 style="color: #444"><img src="cid:1" align="bottom" alt="-">&nbsp; {{ row[0] }}</h2>
+    </td>
+    <td align="right">Całowite miejsce [GB]: <h3>{{ row[1] }}</h3></td>
+    <td align="right">Użyte miejsce [GB]: <h3>{{ row[2] }}</h3></td>
+    <td align="right">Wolne miejsce [GB]: <h3>{{ row[3] }}</h3></td>
+    <td align="center">Wolne miejsce [%]: {% if row[4]|round|int < threshold|int %}<h3 style="background-color: #880000;color: #fff;">{{ row[4]|round }}</h3>{% else %}<h3 style="background-color: #349651;color: #fff;">{{ row[4]|round }}</h3>{% endif %}
+    </td>
+</tr>
+{% endfor %}

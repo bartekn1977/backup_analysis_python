@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html charset=UTF-8">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta name="author" content="Bartlomiej Niedziela">
+<meta name="application-name" content="Backup analysis">
+<meta name="description" content="Oracle database backup analysys report, made by {{ company }}">
+<style type="text/css">
+body {
+    font-family:Helvetica, Arial, sans-serif;
+    font-size:12px;
+    line-height:1.2;
+    color:#748080;
+    background-color:#fff;
+    text-align:left;
+    margin:0;
+    height:100%;
+}
+h1 {
+    color: #000;
+    font-size:21px;
+    background-color: #a8a8a8;
+    margin:5px;
+    padding:10px;
+     -webkit-border-radius: 6px;
+}
+h2 {
+    font-size:20px;
+    margin: 2px;
+    padding-bottom:8px;
+}
+h3 {
+    font-size:16px;
+    margin:2px 2px 6px 2px;
+    padding:2px;
+    color: #3e4444;
+}
+a:link {
+    color:#444;
+    text-decoration: none;
+}
+a:visited {
+    color:#006aa3;
+    text-decoration: none;
+}
+a:hover {
+    color:#006aa3;
+    text-decoration: underline;
+}
+a:active {
+    color:#006aa3;
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+    <table cellspacing="0" cellpadding="0" align="center" border="0" width="700" style="border:0px;padding:0px">
+        <tbody>
+            <tr>
+                <td width="700">
+                    <table cellspacing="0" cellpadding="0" border="0" width="700" style="border:0px;padding:5px;background-color:#a8a8a8; -webkit-border-radius: 6px;">
+                        <tr>
+                            {% if logo %}<td><img src="cid:2" alt="logo" style="margin:0;padding:0"></td>{% endif %}
+                            <td valign="middle">
+                                <h1 style="margin:2px;font-size:21px;color: #000;\">{{ title }} raport z dnia {{ report_date }}</h1>
+                            </td>
+                        <tr>
+                    </table>
+                    <!-- Boxes -->
+                    <table cellspacing="0" cellpadding="5" align="center" border="0" width="700" style="border:0px;padding:5px">
