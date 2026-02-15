@@ -41,6 +41,7 @@ import ctypes
 import datetime
 import threading
 import logging
+import logging.handlers
 import configparser
 
 import texttable
@@ -55,7 +56,21 @@ ALERT_MSG = ""
 LOG_FORMAT = "[%(asctime)s, %(name)s, %(threadName)s, %(levelname)s] %(message)s"
 WARNING_MSG_PLACEHOLDER = "%WARNING_MSG%"
 pathname = os.path.abspath(os.path.dirname(sys.argv[0])) + str(os.sep)
-logging.basicConfig(filename=pathname + "log" + str(os.sep) + "backup_analysis.log", level=logging.INFO, format=LOG_FORMAT)
+
+# Setup rotating file handler - daily rotation, keep 30 days of logs
+log_file = pathname + "log" + str(os.sep) + "backup_analysis.log"
+handler = logging.handlers.TimedRotatingFileHandler(
+    log_file,
+    when='midnight',
+    interval=1,
+    backupCount=30,
+    encoding='utf-8'
+)
+handler.setFormatter(logging.Formatter(LOG_FORMAT))
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.addHandler(handler)
+
 DATE = datetime.datetime.now()
 logging.info("Report start: %s" % DATE.strftime("%d-%m-%Y"))
 env = Environment(loader=FileSystemLoader('%s/templates/' % os.path.dirname(__file__)))
