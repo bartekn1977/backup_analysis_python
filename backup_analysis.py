@@ -146,19 +146,18 @@ def db_test(dbs, results, i, check_logs = False, app_version = False, lob_check 
 
     # APPs versions
     app_version_result = ""
-    if app_version:
-        if app_version == 'amms':
-            logging.info("Checking AMMS version %s" % dbs["db"].upper())
-            ret_val = db.amms_version()
-            app_version_result = ret_val['version']
-        if app_version == 'im':
-            logging.info("Checking IM version %s" % dbs["db"].upper())
-            ret_val = db.im_version()
-            app_version_result = ret_val['version']
-        if app_version == 'docker':
-            logging.info("Checking Docker App version %s" % dbs["db"].upper())
-            ret_val = db.docker_version()
-            app_version_result = ret_val['version']
+    if app_version == 'amms':
+        logging.info("Checking AMMS version %s" % dbs["db"].upper())
+        ret_val = db.amms_version()
+        app_version_result = ret_val['version']
+    elif app_version == 'im':
+        logging.info("Checking IM version %s" % dbs["db"].upper())
+        ret_val = db.im_version()
+        app_version_result = ret_val['version']
+    elif app_version == 'docker':
+        logging.info("Checking Docker App version %s" % dbs["db"].upper())
+        ret_val = db.docker_version()
+        app_version_result = ret_val['version']
 
     # if dataguard
     if dataguard:

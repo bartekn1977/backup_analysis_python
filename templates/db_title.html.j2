@@ -1,25 +1,31 @@
 <tr>
-    <td>
-        <table style="border:0; margin-top:10px;" width="700" border="0">
-            <tr>
-                <td valign="top" width="30%">
-                    Raporty szczegółowe baza:<a name="{{ dbname|upper }}" id="{{ dbname|upper }}"></a>
-                    <h2 style="color: #444" stytle="margin-top:3px; margin bottom:6px;"><img src="cid:0" align="bottom" style="border:0px; margin-top:2px;" alt="-">&nbsp; {{ dbname|upper }}</h2>
-                    DBID: {{ dbid }}<br/>{{ db_version }}
-                    {% if dg_status %}<br/>DataGuard status: {{ dg_status }}{% endif %}
-                </td>
-                <td>
-                    <ul>
-                        <li><a href="#{{ dbname|upper }}_full">kopie pełne</a></li>
-                        <li><a href="#{{ dbname|upper }}_arch">kopie archive-logów</a></li>
-                        {% if check_logs %}<li><a href="#{{ dbname|upper }}_logs">archiwizacja logów aplikacji</a></li>{% endif %}
-                        {% if lob_check %}<li><a href="#{{ dbname|upper }}_lob">partycje lob</a></li>{% endif %}
-                        <li><a href="#{{ dbname|upper }}_redo">rotacja redo logów</a></li>
-                        <li><a href="#{{ dbname|upper }}_tbl">informacje nt. przestrzeni tabel</a></li>
-                        <li><a href="#{{ dbname|upper }}_stats">dane nt. statystyk tabel</a></li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </td>
+<td style="padding:16px 0;">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td colspan="2" style="padding-bottom:12px;">
+<a id="{{ dbname|upper }}" name="{{ dbname|upper }}" style="display:none;"></a>
+<h2 style="margin:0 0 8px 0; color:#2d3748; font-size:18px; font-weight:700;">
+<img src="cid:0" alt="DB" style="display:inline-block; width:20px; height:20px; margin-right:8px; vertical-align:middle; border:0;">
+{{ dbname|upper }}
+</h2>
+<p style="margin:0; color:#718096; font-size:12px;">DBID: <strong>{{ dbid }}</strong> | Version: {{ db_version }}</p>
+{% if dg_status %}<p style="margin:6px 0 0 0; color:#718096; font-size:12px;">DataGuard status: <strong>{{ dg_status }}</strong></p>{% endif %}
+</td>
+</tr>
+<tr>
+<td style="padding:12px; background-color:#f7fafc; border:1px solid #e2e8f0; border-radius:4px; vertical-align:top;">
+<p style="margin:0 0 12px 0; font-weight:600; color:#2d3748; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;">Navigation</p>
+<ul style="margin:0; padding:0; list-style:none; font-size:13px;">
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_full" style="color:#0066cc; text-decoration:none;">• kopie pełne</a></li>
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_arch" style="color:#0066cc; text-decoration:none;">• kopie archive-logów</a></li>
+{% if check_logs %}<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_logs" style="color:#0066cc; text-decoration:none;">• archiwizacja logów</a></li>{% endif %}
+{% if lob_check %}<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_lob" style="color:#0066cc; text-decoration:none;">• partycje lob</a></li>{% endif %}
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_redo" style="color:#0066cc; text-decoration:none;">• rotacja redo logów</a></li>
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_tbl" style="color:#0066cc; text-decoration:none;">• przestrzeń tabel</a></li>
+<li style="margin-bottom:0;"><a href="#{{ dbname|upper }}_stats" style="color:#0066cc; text-decoration:none;">• statystyki tabel</a></li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
 </tr>

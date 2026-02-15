@@ -60,7 +60,6 @@ class EmailCreation(object):
     def create_email(self, html, text):
         """Create email
         """
-        # msg = MIMEMultipart('alternative')
         msg_root = MIMEMultipart('related')
 
         msg_root['From'] = Utils.config['email_from']

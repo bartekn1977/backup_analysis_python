@@ -46,7 +46,7 @@ Version """ + __ver__ + """
 
     @staticmethod
     def create_html_table(tbl_data, tbl_header, index_to_test=None, style_class="", caption="Data table"):
-        """generate HTML table
+        """generate HTML table with modern email-safe styling
 
         :param tbl_data:
         :param tbl_header:
@@ -56,25 +56,34 @@ Version """ + __ver__ + """
         :return:
         """
 
-        html = "<tr>\n<td width=\"700\">\n"
-        html += "<table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"4\" width=\"100%\"" \
-                "style=\"border: 1px solid #a8a8a8; -webkit-border-radius:6px\">\n<tr>\n<thead>\n"
-        for header in tbl_header:
-            html += "<th style=\"color: #444\">{0:}</th>\n".format(header)
-        html += "</tr>\n</thead>\n<tbody>\n"
+        html = '<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-collapse:collapse; margin:12px 0;">\n'
+        html += '<tr style="background-color:#f7fafc; border-bottom:2px solid #e2e8f0;">\n'
+        
+        for col, header in enumerate(tbl_header):
+            html += '<th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:10px 8px; text-transform:uppercase; letter-spacing:0.5px;">{0:}</th>\n'.format(header)
+        
+        html += '</tr>\n'
+        
+        row_count = 0
         for row in tbl_data:
-            html += "<tr>\n"
+            bg_color = '#ffffff' if row_count % 2 == 0 else '#f7fafc'
+            html += '<tr style="background-color:{0}; border-bottom:1px solid #e2e8f0;">\n'.format(bg_color)
+            
             for col, val in enumerate(row):
                 if isinstance(val, (int, float)):
-                    if index_to_test is not None\
-                            and index_to_test == col and float(val) < float(Utils.config["threshold"]):
-                        html += "<td style=\"color:#cf0000;font-weight:bold;text-align:right;\">{0:.2f}</td>\n".format(val)
+                    # Check if value is below threshold
+                    if index_to_test is not None and index_to_test == col and float(val) < float(Utils.config["threshold"]):
+                        text_style = 'color:#e53e3e; font-weight:700;'
                     else:
-                        html += "<td style=\"text-align:right;\">{0:.2f}</td>\n".format(val)
+                        text_style = 'color:#2d3748;'
+                    html += '<td style="{0}text-align:right; padding:10px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
                 else:
-                    html += "<td>%s</td>\n" % val
-            html += "</tr>\n"
-        html += "</tbody>\n</table>\n</td>\n</tr>\n"
+                    html += '<td style="color:#4a5568; padding:10px 8px; font-size:12px;">{0:}</td>\n'.format(val)
+            
+            html += '</tr>\n'
+            row_count += 1
+        
+        html += '</table>\n'
         return html
 
     @staticmethod

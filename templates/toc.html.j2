@@ -1,42 +1,60 @@
-<!-- Box {{ dbname }} -->
-<table width="100%" cellspacing="4" cellpadding="0" style="border: 1px solid #a8a8a8; -webkit-border-radius: 6px">
-    <tr>
-        <td align="center" colspan="2">
-            Baza danych:
-            <h2 style="color: #444"><img src="cid:0" align="bottom" style="border:0px; margin-top:2px;" alt="-">&nbsp; {{ dbname|upper }} {% if version %}<span style="font-size:12px; color:#748080;">({{ version }})</span>{% endif %}</h2>
-            <span style="font-size:12px; color:#748080;">DBID: {{ dbid }}</span>
-        </td>
-    </tr>
-    <tr>
-        <td width="50%" align="center">
-            Wielkość [GB]: <h3>{{ size }}</h3>
-        </td>
-        <td width="50%" align="center">Status kopii:
-            {% if alert %}
-            <h3 style="background-color: #880000;color: #fff;">BŁĄD</h3>
-            {% else %}
-            <h3 style="background-color: #349651;color: #fff;">OK</h3>
-            {% endif %}
-        </td>
-    </tr>
-    {% if dg_status %}
-    <tr>
-        <td></td>
-        <td align="center">Status DataGuard:
-            {% if dg_status == "SUCCESS" %}
-            <h3 style="background-color: #349651;color: #fff;">OK</h3>
-            {% elif dg_status == "ERROR" %}
-            <h3 style="background-color: #880000;color: #fff;">BŁĄD</h3>
-            {% else %}
-            <h3 style="background-color: #fcba03;color: #fff;">DO SPRAWDZENIA</h3>
-            {% endif %}
-        </td>
-    </tr>
-    {% endif %}
-    <tr>
-        <td align="center" colspan="2" style="border-top: 1px solid #a8a8a8;">
-            <p style="margin:6px;"><a href="#{{ dbname|upper }}">Szczegółowe raporty &raquo;</a></p>
-        </td>
-    </tr>
+<!-- Database Summary Card -->
+<tr>
+<td style="padding:8px;">
+<div class="database-box">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td colspan="2" style="padding-bottom:12px; border-bottom:1px solid #cbd5e0;">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td style="vertical-align:middle; padding:0;">
+<img src="cid:0" alt="Database" style="display:inline-block; width:20px; height:20px; margin-right:8px; border:0;">
+<span style="font-weight:700; color:#2d3748; font-size:16px;">{{ dbname|upper }}</span>
+{% if version %}<span style="color:#718096; font-size:11px; margin-left:8px;">v{{ version }}</span>{% endif %}
+</td>
+</tr>
+<tr>
+<td style="padding-top:6px;">
+<span style="color:#718096; font-size:11px;">DBID: <strong>{{ dbid }}</strong></span>
+</td>
+</tr>
 </table>
-<!-- Box {{ dbname }} -->
+</td>
+</tr>
+<tr>
+<td style="padding:12px 0 0 0; width:50%; vertical-align:top;">
+<span style="display:block; font-size:11px; color:#718096; margin-bottom:4px;">Wielkość bazy</span>
+<span style="display:block; font-size:20px; font-weight:700; color:#2d3748;">{{ size }} GB</span>
+</td>
+<td style="padding:12px 0 0 0; width:50%; vertical-align:top; text-align:right;">
+<span style="display:block; font-size:11px; color:#718096; margin-bottom:4px;">Status kopii</span>
+{% if alert %}
+<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:600;">BŁĄD</span>
+{% else %}
+<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:600;">OK</span>
+{% endif %}
+</td>
+</tr>
+{% if dg_status %}
+<tr>
+<td colspan="2" style="padding:12px 0 0 0; border-top:1px solid #e2e8f0; padding-top:12px;">
+<span style="display:block; font-size:11px; color:#718096; margin-bottom:4px;">Status DataGuard</span>
+{% if dg_status == "SUCCESS" %}
+<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:600;">OK</span>
+{% elif dg_status == "ERROR" %}
+<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:600;">BŁĄD</span>
+{% else %}
+<span style="display:inline-block; background-color:#f6ad55; color:#ffffff; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:600;">DO SPRAWDZENIA</span>
+{% endif %}
+</td>
+</tr>
+{% endif %}
+<tr>
+<td colspan="2" style="padding-top:12px; border-top:1px solid #e2e8f0; margin-top:12px; text-align:center;">
+<a href="#{{ dbname|upper }}" style="color:#0066cc; text-decoration:none; font-size:12px; font-weight:600;">Szczegółowe raporty →</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
