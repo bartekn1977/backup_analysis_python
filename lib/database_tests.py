@@ -14,7 +14,36 @@ class DatabaseTests(object):
 
     db_connection = None  # type: DatabaseUsage
     env = None
+    
+    # Alert constants
     ALERT_PREFIX = "<p>&raquo; "
+    
+    # Table header constants - Polish
+    HDR_WOLNE_PCT = "Wolne [%]"
+    HDR_WOLNE_MB = "Wolne [MB]"
+    HDR_RAZEM_MB = "Razem [MB]"
+    HDR_UZYCIE_MB = "Użyte [MB]"
+    HDR_TABLESPACE = "Przestrzeń tabel"
+    HDR_ILOSC_PLIKOW = "Ilość plików"
+    HDR_MAX_MB = "Max [MB]"
+    HDR_FIZYCZNE_GB = "Physical disk consumption [GB]"
+    HDR_DANE_GB = "Space used by data [GB]"
+    HDR_PRZYDZIELONE_GB = "Przydzielone miejsce [GB]"
+    
+    # Table header constants - English
+    HDR_FREE_PCT = "Free [%]"
+    HDR_FREE_MB = "Free [MB]"
+    HDR_TOTAL_MB = "Total [MB]"
+    HDR_USED_MB = "Used [MB]"
+    HDR_TABLESPACE_NAME = "Tablespace name"
+    HDR_NUM_FILES = "Number of files"
+    HDR_MAX_SPACE_MB = "Max space [MB]"
+    
+    # Version and date constants
+    LBL_AMMS_VERSION = "AMMS version"
+    LBL_APP_VERSION = "App version"
+    LBL_INSTALL_DATE = "Install date"
+    LBL_DATABASE_VERSION = "Database version"
 
     def __init__(self, db):
         self.env = Environment(loader=FileSystemLoader('%s/sql/' % os.path.dirname(__file__)))
@@ -95,11 +124,17 @@ class DatabaseTests(object):
         sql_template = self.env.get_template('tablespace_usage.sql')
         sql = sql_template.render()
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Przestrzeń tabel", "Ilość plików", "Użyte [MB]",
-                                                           "Wolne [MB]", "Razem [MB]", "Wolne [%]", "Max [MB]"],
-                                                  index_to_test=5, style_class="full_tbl", caption="Tablespaces")
-        ret_val["txt"] = Utils.create_txt_table(result, ["Tablespace name", "Number of files", "Used [MB]",
-                                                         "Free [MB]", "Total [MB]", "Free [%]", "Max space [MB]"])
+        ret_val["html"] = Utils.create_html_table(
+            result, 
+            [self.HDR_TABLESPACE, self.HDR_ILOSC_PLIKOW, self.HDR_UZYCIE_MB,
+             self.HDR_WOLNE_MB, self.HDR_RAZEM_MB, self.HDR_WOLNE_PCT, self.HDR_MAX_MB],
+            index_to_test=5, style_class="full_tbl", caption="Tablespaces"
+        )
+        ret_val["txt"] = Utils.create_txt_table(
+            result, 
+            [self.HDR_TABLESPACE_NAME, self.HDR_NUM_FILES, self.HDR_USED_MB,
+             self.HDR_FREE_MB, self.HDR_TOTAL_MB, self.HDR_FREE_PCT, self.HDR_MAX_SPACE_MB]
+        )
         return ret_val
 
     def cdb_tblspc_usage(self):
@@ -110,11 +145,17 @@ class DatabaseTests(object):
         sql_template = self.env.get_template('cdb_tablespace_usage.sql')
         sql = sql_template.render()
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Pluggable Database", "Przestrzeń tabel", "Ilość plików", "Użyte [MB]",
-                                                           "Wolne [MB]", "Razem [MB]", "Wolne [%]", "Max [MB]"],
-                                                  index_to_test=6, style_class="full_tbl", caption="Tablespaces")
-        ret_val["txt"] = Utils.create_txt_table(result, ["Pluggable Database", "Tablespace name", "Number of files", "Used [MB]",
-                                                         "Free [MB]", "Total [MB]", "Free [%]", "Max space [MB]"])
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            ["Pluggable Database", self.HDR_TABLESPACE, self.HDR_ILOSC_PLIKOW, self.HDR_UZYCIE_MB,
+             self.HDR_WOLNE_MB, self.HDR_RAZEM_MB, self.HDR_WOLNE_PCT, self.HDR_MAX_MB],
+            index_to_test=6, style_class="full_tbl", caption="Tablespaces"
+        )
+        ret_val["txt"] = Utils.create_txt_table(
+            result,
+            ["Pluggable Database", self.HDR_TABLESPACE_NAME, self.HDR_NUM_FILES, self.HDR_USED_MB,
+             self.HDR_FREE_MB, self.HDR_TOTAL_MB, self.HDR_FREE_PCT, self.HDR_MAX_SPACE_MB]
+        )
         return ret_val
 
     def stats_test(self):
@@ -135,11 +176,16 @@ class DatabaseTests(object):
         sql_template = self.env.get_template('database_size.sql')
         sql = sql_template.render()
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Physical disk consumption [GB]", "Space used by data [GB]"],
-                                                  style_class="half_tbl", caption="Database size")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            [self.HDR_FIZYCZNE_GB, self.HDR_DANE_GB],
+            style_class="half_tbl", caption="Database size"
+        )
         ret_val["size"] = result[0][0]
         ret_val["txt"] = Utils.create_txt_table(
-            result, ["Physical disk consumption [GB]", "Space used by data [GB]"])
+            result,
+            [self.HDR_FIZYCZNE_GB, self.HDR_DANE_GB]
+        )
         return ret_val
 
     def fra_usage(self):
@@ -148,11 +194,16 @@ class DatabaseTests(object):
         sql_template = self.env.get_template('fra_usage.sql')
         sql = sql_template.render()
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Przydzielone miejsce [GB]", "Wolne [%]"],
-                                                  style_class="half_tbl", caption="FRA usage")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            [self.HDR_PRZYDZIELONE_GB, self.HDR_WOLNE_PCT],
+            style_class="half_tbl", caption="FRA usage"
+        )
         ret_val["size"] = result[0][0]
         ret_val["txt"] = Utils.create_txt_table(
-            result, ["FRA size [GB]", "Free [%]"])
+            result,
+            ["FRA size [GB]", self.HDR_FREE_PCT]
+        )
         return ret_val
 
     def cdb_db_size(self):
@@ -163,11 +214,16 @@ class DatabaseTests(object):
         sql_template = self.env.get_template('cdb_database_size.sql')
         sql = sql_template.render()
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Physical disk consumption [GB]", "Space used by data [GB]"],
-                                                  style_class="half_tbl", caption="Database size")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            [self.HDR_FIZYCZNE_GB, self.HDR_DANE_GB],
+            style_class="half_tbl", caption="Database size"
+        )
         ret_val["size"] = result[0][0]
         ret_val["txt"] = Utils.create_txt_table(
-            result, ["Physical disk consumption [GB]", "Space used by data [GB]"])
+            result,
+            [self.HDR_FIZYCZNE_GB, self.HDR_DANE_GB]
+        )
         return ret_val
 
     def logs_test(self):
@@ -211,8 +267,11 @@ class DatabaseTests(object):
         ret_val = {}
         sql = "select dbid from v$database"
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["DBID"],
-                                                  style_class="full_tbl", caption="AMMS version")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            ["DBID"],
+            style_class="full_tbl", caption=self.LBL_AMMS_VERSION
+        )
         ret_val["dbid"] = result[0][0]
         ret_val["txt"] = Utils.create_txt_table(result, ["DBID"])
         return ret_val
@@ -222,11 +281,16 @@ class DatabaseTests(object):
         ret_val = {}
         sql = "select WER_SYS||'.'||WER_INT||'.'||WER_WEW as version, DT_INST as inst_date from sysadm.zainstal_skladnik  where WER_SYS <> 0 and KOD_SKLADN_INST = 'AP_AMMS'"
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Wersja AMMS", "Data instalacji"],
-                                                  style_class="full_tbl", caption="AMMS version")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            ["Wersja AMMS", "Data instalacji"],
+            style_class="full_tbl", caption=self.LBL_AMMS_VERSION
+        )
         ret_val["version"] = result[0][0]
         ret_val["txt"] = Utils.create_txt_table(
-            result, ["AMMS version", "Install date"])
+            result,
+            [self.LBL_AMMS_VERSION, self.LBL_INSTALL_DATE]
+        )
         return ret_val
 
     def im_version(self):
@@ -234,11 +298,16 @@ class DatabaseTests(object):
         ret_val = {}
         sql = "select distinct WER_SYS||'.'||WER_INT||'.'||WER_WEW as version, DT_INST as inst_date from sysadm.zainstal_skladnik  where WER_SYS <> 0 and KOD_SKLADN_INST in ('AP_LAB','AP_WMD')"
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Wersja aplikacji", "Data instalacji"],
-                                                  style_class="full_tbl", caption="App version")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            ["Wersja aplikacji", "Data instalacji"],
+            style_class="full_tbl", caption=self.LBL_APP_VERSION
+        )
         ret_val["version"] = result[0][0]
         ret_val["txt"] = Utils.create_txt_table(
-            result, ["App version", "Install date"])
+            result,
+            [self.LBL_APP_VERSION, self.LBL_INSTALL_DATE]
+        )
         return ret_val
 
     def docker_version(self):
@@ -247,25 +316,41 @@ class DatabaseTests(object):
         sql_template = self.env.get_template('app_docker_version.sql')
         sql = sql_template.render()
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["LP", "Komponent", "Wersja", "Data instlacji"],
-                                                  style_class="full_tbl", caption="App version")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            ["LP", "Komponent", "Wersja", "Data instlacji"],
+            style_class="full_tbl", caption=self.LBL_APP_VERSION
+        )
         ret_val["version"] = result[0][2]
         ret_val["txt"] = Utils.create_txt_table(
-            result, ["No", "Component", "Version", "Install date"])
+            result,
+            ["No", "Component", "Version", self.LBL_INSTALL_DATE]
+        )
         return ret_val
 
     def db_version(self):
         logger.debug("Database version test")
         ret_val = {}
-        # 19c
-        # sql = "select product||'('||version_full||')' as db_ver from product_component_version"
-        # 11g
-        sql = "select * from (select product||'('||VERSION||')' as db_ver from product_component_version where PRODUCT like 'Oracle%') where rownum = 1"
+        
+        # Check database version to determine which query to use
+        version_check_sql = "select VERSION from product_component_version where PRODUCT like 'Oracle%' and rownum = 1"
+        version_result = self.db_connection.execute_query(version_check_sql)
+        db_major_version = int(version_result[0][0].split('.')[0])
+        
+        # Use version_full for Oracle 19c and newer, VERSION for older versions
+        if db_major_version >= 19:
+            sql = "select product||'('||version_full||')' as db_ver from product_component_version where PRODUCT like 'Oracle%' and rownum = 1"
+        else:
+            sql = "select * from (select product||'('||VERSION||')' as db_ver from product_component_version where PRODUCT like 'Oracle%') where rownum = 1"
+        
         result = self.db_connection.execute_query(sql)
-        ret_val["html"] = Utils.create_html_table(result, ["Wersja bazy danych"],
-                                                  style_class="full_tbl", caption="Database version")
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            ["Wersja bazy danych"],
+            style_class="full_tbl", caption=self.LBL_DATABASE_VERSION
+        )
         ret_val["version"] = result[0][0]
-        ret_val["txt"] = Utils.create_txt_table(result, ["Database version"])
+        ret_val["txt"] = Utils.create_txt_table(result, [self.LBL_DATABASE_VERSION])
         return ret_val
 
     def edm_lobs(self, db_name):
