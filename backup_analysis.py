@@ -491,7 +491,9 @@ def add_disk_usage_section(config, oracle_dbs):
         if storage_type.split(":")[1] == "asm":
             db_to_check = storage_type.split(":")[0]
             logging.info("Checking ASM disk usage for %s" % db_to_check)
-            dsk_usage = asm_df([db for db in oracle_dbs if db["db"] == db_to_check][0])
+            db_access = [db for db in oracle_dbs if db["db"] == db_to_check]
+            logging.debug("Database access info for ASM check: %s" % str(db_access))
+            dsk_usage = asm_df(db_access[0])
         else:
             dsk_usage = fs_df(Utils.config_host["fs_check"])
     
