@@ -16,6 +16,7 @@ Przestrzeń dyskowa
 <tr>
 <td>
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-collapse:collapse;">
+<thead>
 <tr style="background-color:#f7fafc; border-bottom:2px solid #e2e8f0;">
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">&nbsp;</th>
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">{%- if disk_type == 'asm' %}Grupa dyskowa{% else %}System plików{% endif %}</th>
@@ -24,7 +25,10 @@ Przestrzeń dyskowa
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:right; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">Wolne</th>
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:right; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">% Wolne</th>
 </tr>
+</thead>
+<tbody>
 {{ inner_table }}
+</tbody>
 </table>
 </td>
 </tr>
