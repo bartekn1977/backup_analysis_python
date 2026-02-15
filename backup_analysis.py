@@ -104,7 +104,7 @@ def fs_df(db_fs):
 
     template = env.get_template('fs_size.html.j2')
     ret_val["html"] = template.render(data=result, threshold=Utils.config["threshold"])
-    ret_val["txt"] = Utils.create_txt_table(result, ["Oracle data Filesystem", "Total space [GB]", "Used space [GB]",
+    ret_val["txt"] = Utils.create_txt_table(result, ["Host", "Oracle data Filesystem", "Total space [GB]", "Used space [GB]",
                                                      "Free space [GB]", "Free perc. [%]"])
     return ret_val
 
@@ -119,6 +119,7 @@ def asm_df(dbs):
     con = DatabaseUsage(dbs)
     sql = """\
 SELECT
+    (SELECT SYS_CONTEXT('USERENV','HOST') FROM DUAL) host,
     name,
     round(total_mb/1024) total_gb,
     round((total_mb-free_mb)/1024) as used_gb,
@@ -133,7 +134,7 @@ FROM
     template = env.get_template('fs_size.html.j2')
     ret_val["html"] = template.render(data=result, threshold=Utils.config["threshold"])
 
-    ret_val["txt"] = Utils.create_txt_table(result, ["Oracle ASM Diskgroup", "Total space [GB]", "Used space [GB]",
+    ret_val["txt"] = Utils.create_txt_table(result, ["Host", "Oracle ASM Diskgroup", "Total space [GB]", "Used space [GB]",
                                                      "Free space [GB]", "Free perc. [%]"])
     return ret_val
 
