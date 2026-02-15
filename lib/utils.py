@@ -71,7 +71,7 @@ Version """ + __ver__ + """
         :return:
         """
 
-        html = '<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-collapse:collapse; margin:12px 0;">\n'
+        html = '<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-collapse:collapse;">\n'
         html += '<tr style="background-color:#f7fafc; border-bottom:2px solid #e2e8f0;">\n'
         
         for col, header in enumerate(tbl_header):
@@ -79,16 +79,13 @@ Version """ + __ver__ + """
         
         html += '</tr>\n'
         
-        row_count = 0
         for row in tbl_data:
-            bg_color = '#ffffff' if row_count % 2 == 0 else '#f7fafc'
-            html += '<tr style="background-color:{0}; border-bottom:1px solid #e2e8f0;">\n'.format(bg_color)
+            html += '<tr style="background-color:#ffffff; border-bottom:1px solid #e2e8f0;">\n'
             
             for col, val in enumerate(row):
                 html += Utils._format_table_cell(val, col, index_to_test)
             
             html += '</tr>\n'
-            row_count += 1
         
         html += '</table>\n'
         return html
