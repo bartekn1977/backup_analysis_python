@@ -295,8 +295,10 @@ def run_tablespace_and_stats_tests(db, dbs, html_content, text_content, multiten
     # Tablespace size
     text_content += "--- Tablespaces ---\n"
     if multitenant:
+        logging.info("Using CDB tablespace test for %s (multitenant=True)" % dbs["db"].upper())
         ret_val = db.cdb_tblspc_usage()
     else:
+        logging.info("Using standard tablespace test for %s (multitenant=False)" % dbs["db"].upper())
         ret_val = db.tblspc_usage()
     text_content += "%s\n" % ret_val["txt"]
     html_content += render_table("Tablespaces", "Raport przestrzeni tabel:", 
@@ -315,8 +317,10 @@ def run_tablespace_and_stats_tests(db, dbs, html_content, text_content, multiten
 def get_database_size(db, dbs, text_content, multitenant):
     """Get database size and update text content"""
     if multitenant:
+        logging.debug("Using CDB size query for %s" % dbs["db"].upper())
         ret_val = db.cdb_db_size()
     else:
+        logging.debug("Using standard size query for %s" % dbs["db"].upper())
         ret_val = db.db_size()
     
     text_content += "%s\n" % ret_val["txt"]
@@ -382,19 +386,23 @@ def db_test(dbs, results, i, check_logs=False, app_version=False, lob_check=Fals
 def determine_check_flags(dbs, config):
     """Determine which checks to run for a database"""
     flags = {
-        'logs_check': dbs["db"] in config["logs_check"],
+        'logs_check': dbs["db"] in config.get("logs_check", []),
         'version_check': False,
-        'lob_check': dbs["db"] in config["app_edm"],
-        'multitenancy': dbs["multitenant"],
-        'dataguard': dbs["dataguard"]
+        'lob_check': dbs["db"] in config.get("app_edm", []),
+        'multitenancy': dbs.get("multitenant", False),
+        'dataguard': dbs.get("dataguard", False)
     }
     
+    # Log multitenancy flag for debugging
+    logging.debug("Database %s: multitenant flag = %s (type: %s)" % 
+                  (dbs["db"], dbs.get("multitenant", False), type(dbs.get("multitenant", False))))
+    
     # Determine app version check
-    if dbs["db"] in config["app_amms"]:
+    if dbs["db"] in config.get("app_amms", []):
         flags['version_check'] = "amms"
-    elif dbs["db"] in config["app_im"]:
+    elif dbs["db"] in config.get("app_im", []):
         flags['version_check'] = "im"
-    elif dbs["db"] in config["app_docker"]:
+    elif dbs["db"] in config.get("app_docker", []):
         flags['version_check'] = "docker"
     
     return flags

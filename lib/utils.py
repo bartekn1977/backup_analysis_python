@@ -55,9 +55,9 @@ Version """ + __ver__ + """
                 text_style = 'color:#e53e3e; font-weight:700;'
             else:
                 text_style = 'color:#2d3748;'
-            return '<td style="{0}text-align:right; padding:10px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
+            return '<td style="{0}text-align:right; padding:6px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
         else:
-            return '<td style="color:#4a5568; padding:10px 8px; font-size:12px;">{0:}</td>\n'.format(val)
+            return '<td style="color:#4a5568; padding:6px 8px; font-size:12px;">{0:}</td>\n'.format(val)
 
     @staticmethod
     def create_html_table(tbl_data, tbl_header, index_to_test=None, style_class="", caption="Data table"):
@@ -75,7 +75,7 @@ Version """ + __ver__ + """
         html += '<tr style="background-color:#f7fafc; border-bottom:2px solid #e2e8f0;">\n'
         
         for col, header in enumerate(tbl_header):
-            html += '<th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:10px 8px; text-transform:uppercase; letter-spacing:0.5px;">{0:}</th>\n'.format(header)
+            html += '<th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">{0:}</th>\n'.format(header)
         
         html += '</tr>\n'
         
@@ -215,13 +215,19 @@ Version """ + __ver__ + """
         """Add sysdba, multitenant, and dataguard flags to oracle_dbs entries"""
         for item in oracle_dbs:
             # SYSDBA flag
-            item['sysdba'] = parsed_config_data.get("use_sysdba", "yes") == "yes"
+            sysdba_value = parsed_config_data.get("use_sysdba", "yes")
+            item['sysdba'] = str(sysdba_value).strip().lower() == "yes"
             
             # Multitenant flag
-            item['multitenant'] = parsed_config_data.get("multitenant", "no") == "yes"
+            multitenant_value = parsed_config_data.get("multitenant", "no")
+            item['multitenant'] = str(multitenant_value).strip().lower() == "yes"
             
             # DataGuard flag
-            item['dataguard'] = parsed_config_data.get("dataguard", "no") == "yes"
+            dataguard_value = parsed_config_data.get("dataguard", "no")
+            item['dataguard'] = str(dataguard_value).strip().lower() == "yes"
+            
+            logger.info("Database %s flags set: sysdba=%s, multitenant=%s, dataguard=%s" % 
+                       (item['db'], item['sysdba'], item['multitenant'], item['dataguard']))
 
     @staticmethod
     def _parse_report_section(cfg):

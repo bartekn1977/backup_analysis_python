@@ -14,15 +14,15 @@
 </tr>
 <tr>
 <td style="padding:12px; background-color:#f7fafc; border:1px solid #e2e8f0; border-radius:4px; vertical-align:top;">
-<p style="margin:0 0 12px 0; font-weight:600; color:#2d3748; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;">Navigation</p>
+<p style="margin:0 0 12px 0; font-weight:600; color:#2d3748; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;">Szczegółowe dane</p>
 <ul style="margin:0; padding:0; list-style:none; font-size:13px;">
-<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_full" style="color:#0066cc; text-decoration:none;">• kopie pełne</a></li>
-<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_arch" style="color:#0066cc; text-decoration:none;">• kopie archive-logów</a></li>
-{% if check_logs %}<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_logs" style="color:#0066cc; text-decoration:none;">• archiwizacja logów</a></li>{% endif %}
-{% if lob_check %}<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_lob" style="color:#0066cc; text-decoration:none;">• partycje lob</a></li>{% endif %}
-<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_redo" style="color:#0066cc; text-decoration:none;">• rotacja redo logów</a></li>
-<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_tbl" style="color:#0066cc; text-decoration:none;">• przestrzeń tabel</a></li>
-<li style="margin-bottom:0;"><a href="#{{ dbname|upper }}_stats" style="color:#0066cc; text-decoration:none;">• statystyki tabel</a></li>
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_full" style="color:#0066cc; text-decoration:none;">kopie pełne</a></li>
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_arch" style="color:#0066cc; text-decoration:none;">kopie archive-logów</a></li>
+{% if check_logs %}<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_logs" style="color:#0066cc; text-decoration:none;">archiwizacja logów</a></li>{% endif %}
+{% if lob_check %}<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_lob" style="color:#0066cc; text-decoration:none;">partycje lob</a></li>{% endif %}
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_redo" style="color:#0066cc; text-decoration:none;">rotacja redo logów</a></li>
+<li style="margin-bottom:6px;"><a href="#{{ dbname|upper }}_tbl" style="color:#0066cc; text-decoration:none;">przestrzeń tabel</a></li>
+<li style="margin-bottom:0;"><a href="#{{ dbname|upper }}_stats" style="color:#0066cc; text-decoration:none;">statystyki tabel</a></li>
 </ul>
 </td>
 </tr>
