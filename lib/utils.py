@@ -55,9 +55,9 @@ Version """ + __ver__ + """
                 text_style = 'color:#e53e3e; font-weight:700;'
             else:
                 text_style = 'color:#2d3748;'
-            return '<td style="{0}text-align:right; padding:6px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
+            return '<td style="{0}text-align:right; border-bottom:1px solid #e2e8f0; padding:6px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
         else:
-            return '<td style="color:#4a5568; padding:6px 8px; font-size:12px;">{0:}</td>\n'.format(val)
+            return '<td style="color:#4a5568; border-bottom:1px solid #e2e8f0; padding:6px 8px; font-size:12px;">{0:}</td>\n'.format(val)
 
     @staticmethod
     def create_html_table(tbl_data, tbl_header, index_to_test=None, style_class="", caption="Data table"):
@@ -179,6 +179,24 @@ Version """ + __ver__ + """
     @staticmethod
     def get_config():
         return Utils.config
+
+    @staticmethod
+    def format_storage_size(size_gb, decimal_places=2):
+        """Format storage size: display in TB if >= 1024 GB, otherwise in GB
+        
+        :param size_gb: Size in gigabytes
+        :param decimal_places: Number of decimal places (default: 2)
+        :return: Formatted string with unit (e.g., "1.5 TB" or "512 GB")
+        """
+        try:
+            size_value = float(size_gb)
+            if size_value >= 1024:
+                size_tb = size_value / 1024
+                return f"{size_tb:.{decimal_places}f} TB"
+            else:
+                return f"{size_value:.{decimal_places}f} GB"
+        except (ValueError, TypeError):
+            return f"{size_gb} GB"
 
     @staticmethod
     def _parse_oracle_section(cfg):

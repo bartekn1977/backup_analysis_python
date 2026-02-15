@@ -143,8 +143,8 @@ class EmailCreation(object):
 
         file1 = self._attach_img("dbico.png", "0")
         msg_root.attach(file1)
-        file2 = self._attach_img("hddico.png", "1")
-        msg_root.attach(file2)
+        # file2 = self._attach_img("hddico.png", "1")
+        # msg_root.attach(file2)
 
         if Utils.config['logo'] is not None:
             file3 = self._attach_img(Utils.config['logo'], "2")

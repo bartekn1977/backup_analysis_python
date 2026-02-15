@@ -75,6 +75,9 @@ DATE = datetime.datetime.now()
 logging.info("Report start: %s" % DATE.strftime("%d-%m-%Y"))
 env = Environment(loader=FileSystemLoader('%s/templates/' % os.path.dirname(__file__)))
 
+# Add custom Jinja2 filters
+env.filters['format_storage'] = Utils.format_storage_size
+
 
 def fs_df(db_fs):
     """Gets filesystem parameters
@@ -433,38 +436,40 @@ def run_database_tests_threaded(oracle_dbs, config):
 
 def render_database_boxes(oracle_dbs, results):
     """Render database summary boxes (TOC)"""
-    html_content = ""
+    html_content = '<tr><td colspan="2" style="padding:16px 0;"><h2 style="margin:0 0 12px 0; color:#2d3748; font-size:18px; font-weight:700;">Podsumowanie baz danych</h2></td></tr>\n'
+    html_content += '<tr><td colspan="2"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">\n'
+    
     template = env.get_template('toc.html.j2')
     
-    j = 0
-    jmax = len(oracle_dbs)
-    
     for i, dbs in enumerate(oracle_dbs):
-        j += 1
-        if j == 1:
-            html_content += "<tr>\n<td width=\"350\">\n"
+        # Start new row for every 2 databases
+        if i % 2 == 0:
+            html_content += "<tr>\n"
         
         # Render box with or without dataguard status
-        if dbs["dataguard"] and results[i].get('dataguard'):
-            html_content += template.render(
+        if dbs.get("dataguard") and results[i].get('dataguard'):
+            box_html = template.render(
                 dbname=dbs["db"], size=results[i]['size'], alert=results[i]['alert'],
                 dbid=results[i]['dbid'], version=results[i]['version'],
-                dg_status=results[i]['dataguard']
+                db_version=results[i]['db_version'], dg_status=results[i]['dataguard']
             )
         else:
-            html_content += template.render(
+            box_html = template.render(
                 dbname=dbs["db"], size=results[i]['size'], alert=results[i]['alert'],
-                dbid=results[i]['dbid'], version=results[i]['version']
+                dbid=results[i]['dbid'], version=results[i]['version'],
+                db_version=results[i]['db_version']
             )
         
-        # Handle grid layout
-        if j == jmax:
-            html_content += "</td>\n</tr>\n"
-        elif j % 2:
-            html_content += "</td>\n<td width=\"350\">\n"
-        else:
-            html_content += "</td>\n</tr>\n<tr>\n<td width=\"350\">\n"
+        html_content += box_html
+        
+        # Close row after 2 databases or at the end
+        if i % 2 == 1 or i == len(oracle_dbs) - 1:
+            # If odd number of databases and last one, add empty cell
+            if i == len(oracle_dbs) - 1 and i % 2 == 0:
+                html_content += '<td style="padding:6px;"></td>\n'
+            html_content += "</tr>\n"
     
+    html_content += '</table></td></tr>\n'
     return html_content
 
 

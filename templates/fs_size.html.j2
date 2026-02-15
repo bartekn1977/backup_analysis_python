@@ -4,19 +4,19 @@
 <strong style="color:#2d3748;">{{ row[0] }}</strong>
 </td>
 <td style="padding:6px 8px; border-bottom:1px solid #e2e8f0; background-color:#ffffff; font-size:12px; text-align:right; color:#2d3748;">
-<strong>{{ row[1]|round }}</strong> GB
+<strong>{{ row[1]|format_storage }}</strong>
 </td>
 <td style="padding:6px 8px; border-bottom:1px solid #e2e8f0; background-color:#ffffff; font-size:12px; text-align:right; color:#4a5568;">
-{{ row[2]|round }} GB
+{{ row[2]|format_storage }}
 </td>
 <td style="padding:6px 8px; border-bottom:1px solid #e2e8f0; background-color:#ffffff; font-size:12px; text-align:right; color:#4a5568;">
-{{ row[3]|round }} GB
+{{ row[3]|format_storage }}
 </td>
 <td style="padding:6px 8px; border-bottom:1px solid #e2e8f0; background-color:#ffffff; font-size:12px; text-align:righ;">
 {% if row[4]|round|int < threshold|int %}
-<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 8px; border-radius:3px; font-weight:700;">{{ row[4]|round }}%</span>
+<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 8px; font-weight:700;">{{ row[4]|round }}%</span>
 {% else %}
-<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 8px; border-radius:3px; font-weight:700;">{{ row[4]|round }}%</span>
+<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 8px; font-weight:700;">{{ row[4]|round }}%</span>
 {% endif %}
 </td>
 </tr>
