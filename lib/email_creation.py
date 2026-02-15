@@ -141,7 +141,7 @@ class EmailCreation(object):
         msg_alternative.attach(txt_msg)
         msg_alternative.attach(html_msg)
 
-        file1 = self._attach_img("dbico.png", "0")
+        file1 = self._attach_img("dbico.png", "2")
         msg_root.attach(file1)
         file2 = self._attach_img("hddico.png", "1")
         msg_root.attach(file2)

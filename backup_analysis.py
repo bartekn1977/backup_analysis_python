@@ -115,7 +115,7 @@ def asm_df(dbs):
     ret_val = {}
     global ALERT
     global ALERT_MSG
-    logging.info("ASM storage usage")
+    logging.info("ASM storage usage: %s" % dbs["db"].upper())
     con = DatabaseUsage(dbs)
     sql = """\
 SELECT
@@ -487,12 +487,14 @@ def add_disk_usage_section(config, oracle_dbs):
     """Add disk usage section to the report"""
     template = env.get_template('disk_usage.html.j2')
     
+    html = ""
+    txt = "\n=== Disk usage summary ===\n\n"
+
     for storage_type in config.get("oradata", []):
         if storage_type.split(":")[1] == "asm":
             db_to_check = storage_type.split(":")[0]
             logging.info("Checking ASM disk usage for %s" % db_to_check)
             db_access = [db for db in oracle_dbs if db["db"] == db_to_check]
-            logging.debug("Database access info for ASM check: %s" % str(db_access))
             dsk_usage = asm_df(db_access[0])
         else:
             dsk_usage = fs_df(Utils.config_host["fs_check"])
