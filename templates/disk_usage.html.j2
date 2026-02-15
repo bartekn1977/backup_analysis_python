@@ -4,9 +4,9 @@
 <tr>
 <td style="padding-bottom:4px;">
 <h3 style="margin:0; color:#2d3748; font-size:14px; font-weight:700;">
-Przestrzeń dyskowa bazy danych
+Przestrzeń dyskowa
 {% if disk_type == 'asm' %}
-(ASM)
+(ASM) {{ disk_name }}
 {% else %}
 (System plików)
 {% endif %}
@@ -17,7 +17,8 @@ Przestrzeń dyskowa bazy danych
 <td>
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-collapse:collapse;">
 <tr style="background-color:#f7fafc; border-bottom:2px solid #e2e8f0;">
-<th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">Nazwa</th>
+<th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">&nbsp;</th>
+<th style="color:#2d3748; font-weight:700; font-size:12px; text-align:left; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">{%- if disk_type == 'asm' %}Grupa dyskowa{% else %}System plików{% endif %}</th>
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:right; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">Całkowite</th>
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:right; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">Użyte</th>
 <th style="color:#2d3748; font-weight:700; font-size:12px; text-align:right; padding:6px 8px; text-transform:uppercase; letter-spacing:0.5px;">Wolne</th>

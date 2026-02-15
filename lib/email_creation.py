@@ -147,7 +147,7 @@ class EmailCreation(object):
         msg_root.attach(file2)
 
         if Utils.config['logo'] is not None:
-            file3 = self._attach_img(Utils.config['logo'], "2")
+            file3 = self._attach_img(Utils.config['logo'], "3")
             msg_root.attach(file3)
 
         logger.info("Sending email to: " + Utils.config['email_addr'] + "; " + Utils.config['email_cc'])
