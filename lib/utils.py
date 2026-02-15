@@ -8,6 +8,8 @@ import logging
 import datetime
 import texttable
 import subprocess
+import ctypes
+import configparser
 
 __ver__ = "3.17.0"
 logger = logging.getLogger(__name__)
@@ -45,6 +47,19 @@ Version """ + __ver__ + """
         return table.draw() + "\n"
 
     @staticmethod
+    def _format_table_cell(val, col, index_to_test):
+        """Format a single table cell value"""
+        if isinstance(val, (int, float)):
+            # Check if value is below threshold
+            if index_to_test is not None and index_to_test == col and float(val) < float(Utils.config["threshold"]):
+                text_style = 'color:#e53e3e; font-weight:700;'
+            else:
+                text_style = 'color:#2d3748;'
+            return '<td style="{0}text-align:right; padding:10px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
+        else:
+            return '<td style="color:#4a5568; padding:10px 8px; font-size:12px;">{0:}</td>\n'.format(val)
+
+    @staticmethod
     def create_html_table(tbl_data, tbl_header, index_to_test=None, style_class="", caption="Data table"):
         """generate HTML table with modern email-safe styling
 
@@ -70,15 +85,7 @@ Version """ + __ver__ + """
             html += '<tr style="background-color:{0}; border-bottom:1px solid #e2e8f0;">\n'.format(bg_color)
             
             for col, val in enumerate(row):
-                if isinstance(val, (int, float)):
-                    # Check if value is below threshold
-                    if index_to_test is not None and index_to_test == col and float(val) < float(Utils.config["threshold"]):
-                        text_style = 'color:#e53e3e; font-weight:700;'
-                    else:
-                        text_style = 'color:#2d3748;'
-                    html += '<td style="{0}text-align:right; padding:10px 8px; font-size:12px;">{1:.2f}</td>\n'.format(text_style, val)
-                else:
-                    html += '<td style="color:#4a5568; padding:10px 8px; font-size:12px;">{0:}</td>\n'.format(val)
+                html += Utils._format_table_cell(val, col, index_to_test)
             
             html += '</tr>\n'
             row_count += 1
@@ -177,73 +184,108 @@ Version """ + __ver__ + """
         return Utils.config
 
     @staticmethod
-    def parse_config_file(ConfigParser):
+    def _parse_oracle_section(cfg):
+        """Parse oracle section of config file and set environment variables"""
+        orcl_data = cfg.items('oracle')
+        for key, val in orcl_data:
+            os.environ[key.upper()] = val
+            if key == "oracle_home":
+                os.environ["PATH"] = val + "/bin:" + os.environ["PATH"]
+
+    @staticmethod
+    def _parse_list_config_value(val):
+        """Parse comma-separated list from config value"""
+        elem_list = val.split(",")
+        return [item.strip() for item in elem_list]
+
+    @staticmethod
+    def _parse_oracle_dbs_config(val):
+        """Parse oracle_dbs configuration value"""
+        parsed_dbs = []
+        elem_list = Utils._parse_list_config_value(val)
+        for elem in elem_list:
+            parsed_dbs.append({
+                "url": elem,
+                "db": elem.split("@")[-1]
+            })
+        return parsed_dbs
+
+    @staticmethod
+    def _add_db_flags_to_oracle_dbs(oracle_dbs, parsed_config_data):
+        """Add sysdba, multitenant, and dataguard flags to oracle_dbs entries"""
+        for item in oracle_dbs:
+            # SYSDBA flag
+            item['sysdba'] = parsed_config_data.get("use_sysdba", "yes") == "yes"
+            
+            # Multitenant flag
+            item['multitenant'] = parsed_config_data.get("multitenant", "no") == "yes"
+            
+            # DataGuard flag
+            item['dataguard'] = parsed_config_data.get("dataguard", "no") == "yes"
+
+    @staticmethod
+    def _parse_report_section(cfg):
+        """Parse report section of config file"""
+        config_data = cfg.items('report')
+        logger.info("-- Parsing config file: %s%s" % (pathname, Utils.params["config_file"]))
+        parsed_config_data = {}
+        
+        list_keys = ("oradata", "logs_check", "app_amms", "app_im", "app_docker", "app_edm")
+        
+        for key, val in config_data:
+            logger.info("%s = %s" % (key, val))
+            
+            if key == "oracle_dbs":
+                parsed_config_data[key] = Utils._parse_oracle_dbs_config(val)
+            elif key in list_keys:
+                parsed_config_data[key] = Utils._parse_list_config_value(val)
+            else:
+                parsed_config_data[key] = val
+        
+        # Add flags to oracle_dbs
+        if "oracle_dbs" in parsed_config_data:
+            Utils._add_db_flags_to_oracle_dbs(parsed_config_data["oracle_dbs"], parsed_config_data)
+        
+        return parsed_config_data
+
+    @staticmethod
+    def _parse_host_section(cfg):
+        """Parse host section of config file"""
+        host_data = cfg.items('host')
+        parsed_host_data = {}
+        
+        list_keys = ("host_name", "fs_check", "fs_shared")
+        
+        for key, val in host_data:
+            if key in list_keys:
+                parsed_host_data[key] = Utils._parse_list_config_value(val)
+        
+        parsed_host_data["current_host"] = os.uname()[1]
+        return parsed_host_data
+
+    @staticmethod
+    def parse_config_file(config_parser):
         """Parse config file
+        
+        :param config_parser: ConfigParser module reference
         """
         global pathname
         try:
-            cfg = ConfigParser.RawConfigParser(allow_no_value=True)
+            cfg = config_parser.RawConfigParser(allow_no_value=True)
             cfg.read(pathname + Utils.params["config_file"])
 
-            # Oracle part
-            orcl_data = cfg.items('oracle')
-            for key, val in orcl_data:
-                os.environ[key.upper()] = val
-                if key in ("oracle_home"):
-                    os.environ["PATH"] = val + "/bin:" + os.environ["PATH"]
+            # Parse sections
+            Utils._parse_oracle_section(cfg)
+            parsed_config_data = Utils._parse_report_section(cfg)
+            parsed_host_data = Utils._parse_host_section(cfg)
 
-            # Report part
-            config_data = cfg.items('report')
-            logger.info("-- Parsing config file: %s%s" % (pathname, Utils.params["config_file"]))
-            parsed_config_data = {}
-            for key, val in config_data:
-                logger.info("%s = %s" % (key, val))
-
-                if key in ("oracle_dbs"):
-                    parsed_config_data[key] = []
-                    elem_list = val.split(",")
-                    elem_list = [item.strip() for item in elem_list]
-                    for i in range(len(elem_list)):
-                        parsed_config_data[key].append(
-                            {"url": elem_list[i], "db": elem_list[i].split("@")[-1]})
-                elif key in ("oradata", "logs_check", "app_amms", "app_im", "app_docker", "app_edm"):
-                    elem_list = val.split(",")
-                    elem_list = [item.strip() for item in elem_list]
-                    parsed_config_data[key] = elem_list
-                else:
-                    parsed_config_data[key] = val
-
-            for item in parsed_config_data["oracle_dbs"]:
-                if "use_sysdba" in parsed_config_data:
-                    item['sysdba'] = (lambda x: True if x == 'yes' else False)(parsed_config_data["use_sysdba"])
-                else:
-                    item['sysdba'] = True
-                if "multitenant" in parsed_config_data:
-                    item['multitenant'] = (lambda x: True if x == 'yes' else False)(parsed_config_data["multitenant"])
-                else:
-                    item['multitenant'] = False
-
-                if "dataguard" in parsed_config_data:
-                    item['dataguard'] = (lambda x: True if x == 'yes' else False)(parsed_config_data["dataguard"])
-                else:
-                    item['dataguard'] = False
-
-            # Host part
-            host_data = cfg.items('host')
-            parsed_host_data = {}
-            for key, val in host_data:
-                if key in ("host_name", "fs_check", "fs_shared"):
-                    parsed_host_data[key] = []
-                    elem_list = val.split(",")
-                    elem_list = [item.strip() for item in elem_list]
-                    parsed_host_data[key] = elem_list
-            parsed_host_data["current_host"] = os.uname()[1]
-
+            # Store results
             Utils.config = parsed_config_data
             Utils.config_host = parsed_host_data
             logger.info(Utils.config)
             logger.info(Utils.config_host)
             return Utils.config
+            
         except configparser.Error as e:
             logger.warning("Config parse error: %s" % e)
             print("Config parse error %s" % e)
