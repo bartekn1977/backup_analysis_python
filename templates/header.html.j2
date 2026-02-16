@@ -27,8 +27,8 @@ body {
     font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
     font-size: 13px;
     line-height: 1.5;
-    color: #4a5568;
-    background-color: #f7fafc;
+    color: #333333;
+    background-color: #f5f5f5;
     text-align: left;
     margin: 0;
     padding: 0;
@@ -37,12 +37,12 @@ body {
     background-color: #ffffff;
 }
 h1 {
-    color: #1a202c;
+    color: #ffffff;
     font-size: 28px;
     font-weight: 700;
     margin: 0;
     padding: 24px;
-    background-color: #2d3748;
+    background-color: #C74634;
     color: #ffffff;
 }
 h2 {
@@ -50,7 +50,7 @@ h2 {
     font-weight: 600;
     margin: 16px 0 12px 0;
     padding: 0;
-    color: #2d3748;
+    color: #333333;
 }
 h3 {
     font-size: 15px;
@@ -63,54 +63,54 @@ h4 {
     font-size: 14px;
     font-weight: 600;
     margin: 12px 0;
-    color: #2d3748;
+    color: #333333;
 }
 h5 {
     font-size: 13px;
     font-weight: 600;
     margin: 8px 0;
-    color: #4a5568;
+    color: #666666;
 }
 a {
-    color: #0066cc;
+    color: #0572ce;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
 }
 .status-error {
-    background-color: #e53e3e !important;
+    background-color: #d62728 !important;
 }
 .status-warning {
-    background-color: #f6ad55 !important;
+    background-color: #ff9800 !important;
 }
 .card {
-    border: 1px solid #e2e8f0;
+    border: 1px solid #dddddd;
     margin: 12px 0;
     overflow: hidden;
 }
 .card-header {
-    background-color: #f7fafc;
-    border-bottom: 1px solid #e2e8f0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #dddddd;
     padding: 12px;
 }
 .card-body {
     padding: 12px;
 }
 .database-box {
-    border: 1px solid #cbd5e0;
-    background-color: #f9fafb;
+    border: 1px solid #dddddd;
+    background-color: #fafafa;
     margin: 8px 0;
     padding: 12px;
 }
 .box-title {
     font-weight: 600;
-    color: #2d3748;
+    color: #333333;
     margin-bottom: 12px;
     font-size: 14px;
 }
 .text-muted {
-    color: #718096;
+    color: #999999;
     font-size: 12px;
 }
 .text-right {
@@ -123,7 +123,7 @@ a:hover {
 </style>
 </head>
 
-<body style="margin:0; padding:0; min-width:100%!important; background-color:#f7fafc; background-image: url(cid:3); background-repeat: repeat; background-position: top left;">
+<body style="margin:0; padding:0; min-width:100%!important; background-color:#f5f5f5; background-image: url(cid:3); background-repeat: repeat; background-position: top left;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="min-width:320px; width:100%!important; margin:0; padding:0; background-image: url(cid:3); background-repeat: repeat; background-position: top left;">
 <tr>
 <td align="center" style="padding:20px 0;">
@@ -134,13 +134,13 @@ a:hover {
 <td style="border:0; padding:0;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-<td style="background-color: #2d3748; padding:0;">
+<td style="background-color: #C74634; background-image: url(cid:4); background-repeat: repeat-x; background-position: top left; padding:0;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-{% if logo %}<td style="padding:20px 16px; text-align:left; width:80px;"><img src="cid:4" alt="logo" style="display:block; width:60px; height:auto; border:0;"></td>{% endif %}
+{% if logo %}<td style="padding:20px 16px; text-align:left; width:80px;"><img src="cid:5" alt="logo" style="display:block; width:60px; height:auto; border:0;"></td>{% endif %}
 <td style="padding:20px 16px; text-align:left; vertical-align:middle;">
 <h1 style="margin:0; font-size:24px; color:#ffffff; font-weight:700;">{{ title }}</h1>
-<p style="margin:4px 0 0 0; color:#cbd5e0; font-size:12px;">Raport z dnia {{ report_date }}</p>
+<p style="margin:4px 0 0 0; color:#ffffff; opacity:0.9; font-size:12px;">Raport z dnia {{ report_date }}</p>
 </td>
 </tr>
 </table>
