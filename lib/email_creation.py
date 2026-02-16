@@ -141,21 +141,21 @@ class EmailCreation(object):
         msg_alternative.attach(txt_msg)
         msg_alternative.attach(html_msg)
 
-        background_pattern = self._attach_img("background-pattern-neutral.png", "3")
+        background_pattern = self._attach_img("background-pattern-neutral.png", "background-pattern")
         msg_root.attach(background_pattern)
 
-        background_top = self._attach_img("background-top-neutral.png", "4")
+        background_top = self._attach_img("background-top-neutral.png", "background-top")
         msg_root.attach(background_top)
 
-        db_icon = self._attach_img("dbico.png", "2")
+        db_icon = self._attach_img("dbico.png", "dbicon")
         msg_root.attach(db_icon)
-        hdd_icon = self._attach_img("hddico.png", "1")
+        hdd_icon = self._attach_img("hddico.png", "hddicon")
         msg_root.attach(hdd_icon)
 
         
 
         if Utils.config['logo'] is not None:
-            logo_file = self._attach_img(Utils.config['logo'], "5")
+            logo_file = self._attach_img(Utils.config['logo'], "logo")
             msg_root.attach(logo_file)
 
         logger.info("Sending email to: " + Utils.config['email_addr'] + "; " + Utils.config['email_cc'])

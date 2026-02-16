@@ -105,7 +105,7 @@ Version """ + __ver__ + """
 
         html += "<table width=\"100%\" cellspacing=\"4\" cellpadding=\"0\" style=\"border: 1px solid #a8a8a8; -webkit-border-radius: 6px\">\n"
         html += "<tr>\n<td align=\"center\" colspan=\"2\">Baza danych:\n"
-        html += "<h2 style=\"color: #444\"><img src=\"cid:0\" align=\"bottom\" style=\"border:0px; margin-top:2px;\" alt=\"-\">&nbsp; {0:} {1:}</h2>".format(db_name.upper(), app_version_str)
+        html += "<h2 style=\"color: #444\"><img src=\"cid:dbicon\" align=\"bottom\" style=\"border:0px; margin-top:2px;\" alt=\"-\">&nbsp; {0:} {1:}</h2>".format(db_name.upper(), app_version_str)
         html += "<span style=\"font-size:12px; color:#748080;\">DBID: {0:}</span>".format(db_id)
         html += "</td>\n</tr>\n<tr>\n<td width=\"50%\" align=\"center\">\nWielkość [GB]:\n<h3>{0:.2f}</h3>\n</td>\n".format(float(db_size))
         html += "<td width=\"50%\" align=\"center\">Status kopii:"
