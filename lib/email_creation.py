@@ -152,8 +152,6 @@ class EmailCreation(object):
         hdd_icon = self._attach_img("hddico.png", "hddicon")
         msg_root.attach(hdd_icon)
 
-        
-
         if Utils.config['logo'] is not None:
             logo_file = self._attach_img(Utils.config['logo'], "logo")
             msg_root.attach(logo_file)
