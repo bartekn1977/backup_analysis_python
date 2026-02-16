@@ -1,11 +1,11 @@
 <!-- Database Summary Card -->
 <td style="padding:6px; width:50%; vertical-align:top;">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border:1px solid #cbd5e0; background-color:#f9fafb;">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border:1px solid #DDDBD9; background-color:#f9fafb;">
 <tr>
 <td style="padding:12px;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-<td colspan="2" style="padding-bottom:10px; border-bottom:1px solid #cbd5e0;">
+<td colspan="2" style="padding-bottom:10px; border-bottom:1px solid #DDDBD9;">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
 <td style="vertical-align:middle; padding:0;">
@@ -33,9 +33,9 @@
 <td style="text-align:right; padding-bottom:{% if dg_status %}10px{% else %}0{% endif %};">
 <span style="display:block; font-size:11px; color:#718096; margin-bottom:4px;">Status kopii</span>
 {% if alert %}
-<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">BŁĄD</span>
+<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">&nbsp;BŁĄD&nbsp;</span>
 {% else %}
-<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">OK</span>
+<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">&nbsp;OK&nbsp;</span>
 {% endif %}
 </td>
 </tr>
@@ -44,11 +44,11 @@
 <td style="text-align:right;">
 <span style="display:block; font-size:11px; color:#718096; margin-bottom:4px;">Status DataGuard</span>
 {% if dg_status == "SUCCESS" %}
-<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">OK</span>
+<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">&nbsp;OK&nbsp;</span>
 {% elif dg_status == "ERROR" %}
-<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">BŁĄD</span>
+<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">&nbsp;BŁĄD&nbsp;</span>
 {% else %}
-<span style="display:inline-block; background-color:#f6ad55; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">DO SPRAWDZENIA</span>
+<span style="display:inline-block; background-color:#f6ad55; color:#ffffff; padding:4px 10px; font-size:12px; font-weight:600;">&nbsp;DO SPRAWDZENIA&nbsp;</span>
 {% endif %}
 </td>
 </tr>
