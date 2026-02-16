@@ -146,9 +146,12 @@ class EmailCreation(object):
         file2 = self._attach_img("hddico.png", "1")
         msg_root.attach(file2)
 
+        file3 = self._attach_img("texture-1.png", "3")
+        msg_root.attach(file3)
+
         if Utils.config['logo'] is not None:
-            file3 = self._attach_img(Utils.config['logo'], "3")
-            msg_root.attach(file3)
+            file4 = self._attach_img(Utils.config['logo'], "4")
+            msg_root.attach(file4)
 
         logger.info("Sending email to: " + Utils.config['email_addr'] + "; " + Utils.config['email_cc'])
         self._smtpserver.sendmail(msg_root['From'], emails, msg_root.as_string())
