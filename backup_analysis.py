@@ -334,6 +334,17 @@ def get_database_size(db, dbs, text_content, multitenant):
     return db_size, text_content
 
 
+def get_memory_size(db, dbs, text_content):
+    """Get SGA and PGA size and update text content"""
+
+    ret_val = db.db_memory()
+    text_content += "%s\n" % ret_val["txt"]
+
+    logging.info("Memory size " + dbs["db"].upper() + " SGA: " + str(ret_val["sga"]) + " GB, PGA: " + str(ret_val["pga"]) + " GB")
+    
+    return ret_val, text_content
+
+
 def db_test(dbs, results, i, check_logs=False, app_version=False, lob_check=False,
             multitenant=False, dataguard=False):
     """Execute tests on database"""
@@ -354,6 +365,9 @@ def db_test(dbs, results, i, check_logs=False, app_version=False, lob_check=Fals
     
     # Get database size
     db_size, text_content = get_database_size(db, dbs, text_content, multitenant)
+
+    # Get memory size
+    db_memory, text_content = get_memory_size(db, dbs, text_content)
     
     # Run backup tests
     html_content, text_content, alert, alert_msg = run_backup_tests(db, dbs, html_content, text_content)
@@ -380,7 +394,9 @@ def db_test(dbs, results, i, check_logs=False, app_version=False, lob_check=Fals
         "alert_msg": alert_msg,
         "db_version": db_info['db_version'],
         "version": app_version_result,
-        "dbid": str(db_info['dbid'])
+        "dbid": str(db_info['dbid']),
+        "sga": db_memory['sga'],
+        "pga": db_memory['pga']
     }
     
     if dataguard:
@@ -458,7 +474,7 @@ def render_database_boxes(oracle_dbs, results):
             box_html = template.render(
                 dbname=dbs["db"], size=results[i]['size'], alert=results[i]['alert'],
                 dbid=results[i]['dbid'], version=results[i]['version'],
-                db_version=results[i]['db_version']
+                db_version=results[i]['db_version'], sga=results[i]['sga'], pga=results[i]['pga']
             )
         
         html_content += box_html

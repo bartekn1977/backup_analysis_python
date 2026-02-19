@@ -1,11 +1,8 @@
-select * from (
 select distinct
         r.START_TIME START_TIME,
         r.END_TIME END_TIME,
         round(nvl(r.input_bytes/1024/1024/1024,0), 2) INPUT_BYTES_DISPLAY,
         round(nvl(r.output_bytes/1024/1024/1024,0), 2) OUTPUT_BYTES_DISPLAY,
-        --TO_CHAR(round(r.input_bytes/1024/1024/1024, 2),'FM999999999999990.99') INPUT_BYTES_DISPLAY,
-        --TO_CHAR(round(r.output_bytes/1024/1024/1024, 2),'FM999999999999990.99') OUTPUT_BYTES_DISPLAY,
         p.tag INPUT_TYPE,
         r.OUTPUT_DEVICE_TYPE OUTPUT_DEVICE_TYPE,
         r.status STATUS 
@@ -27,4 +24,4 @@ where
         d.SESSION_RECID=r.SESSION_RECID
 order by
         r.START_TIME desc
-) where rownum <= 7
+fetch first 7 rows only

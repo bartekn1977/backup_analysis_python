@@ -1,4 +1,3 @@
-select * from (
 select
 a.FILE_NAME,
 round(a.bytes/1024/1024/1024,2) as Used_GB,
@@ -15,4 +14,4 @@ a.tablespace_name = b.TABLENAME||'_S'
 and
 a.tablespace_name = c.tablespace_name
 order by b.HIGHEST desc
-) where rownum <= 1
+fetch first 1 rows only

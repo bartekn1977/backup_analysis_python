@@ -4,7 +4,6 @@ select
     round(nvl(totalusedspace,0)) used,
     round(df.totalspace - nvl(tu.totalusedspace,0)) free,
     round(nvl(df.totalspace,0)) total,
-    --round( 100 * ( (df.totalspace - nvl(tu.totalusedspace,0))/ df.totalspace),2) perc_free,
     round(100 - round( 100 * ( (nvl(tu.totalusedspace,0))/ decode(df.maxspace,0,df.totalspace,df.maxspace)),2),2) perc_free,
     round(nvl(df.maxspace,0)) max_file
 from

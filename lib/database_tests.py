@@ -29,6 +29,8 @@ class DatabaseTests(object):
     HDR_FIZYCZNE_GB = "Physical disk consumption [GB]"
     HDR_DANE_GB = "Space used by data [GB]"
     HDR_PRZYDZIELONE_GB = "Przydzielone miejsce [GB]"
+    HDR_SGA_GB = "SGA [GB]"
+    HDR_PGA_GB = "PGA [GB]"
     
     # Table header constants - English
     HDR_FREE_PCT = "Free [%]"
@@ -185,6 +187,24 @@ class DatabaseTests(object):
         ret_val["txt"] = Utils.create_txt_table(
             result,
             [self.HDR_FIZYCZNE_GB, self.HDR_DANE_GB]
+        )
+        return ret_val
+    
+    def db_memory(self):
+        logger.debug("DB memory delegation")
+        ret_val = {}
+        sql_template = self.env.get_template('memory.sql')
+        sql = sql_template.render()
+        result = self.db_connection.execute_query(sql)
+        ret_val["html"] = Utils.create_html_table(
+            result,
+            [self.HDR_SGA_GB, self.HDR_PGA_GB],
+            style_class="half_tbl", caption="Database memory"
+        )
+        ret_val["size"] = result[0][0]
+        ret_val["txt"] = Utils.create_txt_table(
+            result,
+            [self.HDR_SGA_GB, self.HDR_PGA_GB]
         )
         return ret_val
 
