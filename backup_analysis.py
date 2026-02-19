@@ -3,7 +3,7 @@
 Backup and Tablespace Analysis
 for ORACLE databases
 
-ver. 3.21.0
+ver. 3.2.0
 author: Bart!
 (C) data4IT, 2026
 
@@ -29,10 +29,11 @@ Changelog
     3.17.0 - formatting updates
     3.20.0 - refactor to be used with python3
     3.21.0 - use oracledb instead of cx_Oracle, add dataguard status, add docker version check
+    3.22.0 - add SGA and PGA size to report and database summary boxes
 
 """
 
-__ver__ = "3.21.0"
+__ver__ = "3.22.0"
 
 import os
 import sys
@@ -468,7 +469,8 @@ def render_database_boxes(oracle_dbs, results):
             box_html = template.render(
                 dbname=dbs["db"], size=results[i]['size'], alert=results[i]['alert'],
                 dbid=results[i]['dbid'], version=results[i]['version'],
-                db_version=results[i]['db_version'], dg_status=results[i]['dataguard']
+                db_version=results[i]['db_version'], dg_status=results[i]['dataguard'],
+                sga=results[i]['sga'], pga=results[i]['pga']
             )
         else:
             box_html = template.render(

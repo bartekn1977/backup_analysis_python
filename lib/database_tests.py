@@ -201,7 +201,8 @@ class DatabaseTests(object):
             [self.HDR_SGA_GB, self.HDR_PGA_GB],
             style_class="half_tbl", caption="Database memory"
         )
-        ret_val["size"] = result[0][0]
+        ret_val["sga"] = result[0][0]
+        ret_val["pga"] = result[0][1]
         ret_val["txt"] = Utils.create_txt_table(
             result,
             [self.HDR_SGA_GB, self.HDR_PGA_GB]
