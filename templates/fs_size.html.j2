@@ -16,10 +16,10 @@
 {{ row[4]|format_storage }}
 </td>
 <td style="padding:6px 8px; border-bottom:1px solid #e2e8f0; background-color:#ffffff; font-size:12px; text-align:right;">
-{% if row[5]|round|int < threshold|int %}
-<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 8px; font-weight:700;">&nbsp;{{ row[5]|round }}%&nbsp;</span>
+{% if row[5]|int < threshold|int %}
+<span style="display:inline-block; background-color:#e53e3e; color:#ffffff; padding:4px 8px; font-weight:700;">&nbsp;{{ row[5]|int }}%&nbsp;</span>
 {% else %}
-<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 8px; font-weight:700;">&nbsp;{{ row[5]|round }}%&nbsp;</span>
+<span style="display:inline-block; background-color:#48bb78; color:#ffffff; padding:4px 8px; font-weight:700;">&nbsp;{{ row[5]|int }}%&nbsp;</span>
 {% endif %}
 </td>
 </tr>
