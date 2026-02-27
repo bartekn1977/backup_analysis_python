@@ -44,6 +44,8 @@ import threading
 import logging
 import logging.handlers
 import configparser
+import warnings
+warnings.filterwarnings('ignore', message='.*cryptography', )
 
 import texttable
 from jinja2 import Environment, FileSystemLoader
