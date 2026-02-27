@@ -1,1 +1,15 @@
 static/sp_logo.png
+backup_analysis-x86_64.AppImage
+.gitignore
+myenv/
+build/
+log/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+.DS_Store
+*.log

@@ -1,0 +1,8 @@
+cffi==2.0.0
+cryptography==46.0.5
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+oracledb==3.4.2
+pycparser==2.23
+texttable==1.7.0
+typing_extensions==4.15.0
