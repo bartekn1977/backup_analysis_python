@@ -97,7 +97,7 @@ def fs_df(db_fs):
         used = float(used // (2**30))
         free = float(free // (2**30))
         pct_free = float((free / total)*100)
-        result.append([i, total, used, free, pct_free])
+        result.append([i, Utils.config["current_host"], total, used, free, pct_free])
         if float(pct_free) <= float(Utils.config["threshold"]):
             ALERT = True
             ALERT_MSG += "<p>&raquo; " + i + " filesystem has not enought space</p>"
